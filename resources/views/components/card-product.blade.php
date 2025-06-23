@@ -1,6 +1,6 @@
 @props(['product'])
 
-<div class="flex flex-col gap-3 pb-3">
+<div class="flex flex-col gap-3 pb-3 hover:scale-105 transition cursor-pointer">
     <div
       class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
       style="background-image: url({{ $product['img'] }});"
