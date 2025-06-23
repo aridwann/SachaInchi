@@ -11,9 +11,9 @@
           url('./img/sachainchi.jpeg');
       "
     >
-      <div class="text-right space-y-2 md:space-y-0">
+      <div class="text-right space-y-2 md:space-y-0 font-bold">
         <h1
-          class="bg-yellow-600 text-white text-lg md:text-xl px-4 py-2 rounded-l-xl w-full cursor-pointer"
+          class="bg-yellow-600 text-lg md:text-xl px-4 py-2 rounded-l-xl w-full cursor-pointer"
         >
           MASUK
         </h1>
@@ -57,7 +57,7 @@
           >Lupa password?</a
         >
         <button
-          class="bg-yellow-600 text-white text-sm font-bold px-4 py-2 rounded-full cursor-pointer"
+          class="bg-yellow-600 text-sm font-bold px-4 py-2 rounded-full cursor-pointer"
         >
           Masuk
         </button>

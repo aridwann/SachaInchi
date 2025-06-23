@@ -12,7 +12,7 @@
         {{ $product['name'] }}
       </p>
       <p class="text-[#8c735a] text-sm font-normal leading-normal">
-        Premium quality oil
+        Deskripsi singkat
       </p>
       <p
       class="text-[#f38920] text-sm font-bold leading-normal my-2"

@@ -37,7 +37,7 @@
 
       <div class="w-full flex justify-end max-w-sm mt-2">
         <button
-          class="bg-yellow-600 text-white text-sm font-bold px-4 py-2 rounded-full cursor-pointer"
+          class="bg-yellow-600 text-sm font-bold px-4 py-2 rounded-full cursor-pointer"
         >
           Daftar
         </button>
@@ -55,7 +55,7 @@
           url('./img/mirrorsachainchi.jpg');
       "
     >
-      <div class="text-left md:text-left space-y-2 md:space-y-0">
+      <div class="text-left md:text-left space-y-2 md:space-y-0 font-bold">
         <h1
           class="text-white text-lg md:text-xl px-4 py-2 cursor-pointer hover:underline"
           onclick="location.href = '/login'"
@@ -63,7 +63,7 @@
           MASUK
         </h1>
         <h1
-          class="bg-yellow-600 text-white text-lg md:text-xl px-4 py-2 w-fit rounded-r-xl cursor-pointer"
+          class="bg-yellow-600 text-lg md:text-xl px-4 py-2 w-fit rounded-r-xl cursor-pointer"
         >
           DAFTAR
         </h1>

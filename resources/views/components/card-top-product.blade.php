@@ -18,7 +18,7 @@
     <p
       class="text-[#8a7560] text-sm font-normal leading-normal"
     >
-      Minyak murni kaya omega 3, 6, dan 9. 
+      Deskripsi singkat
     </p>
     <p
       class="text-[#f38920] text-sm font-bold leading-normal my-2"
