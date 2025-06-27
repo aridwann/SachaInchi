@@ -43,19 +43,19 @@
                 <h3
                 class="text-[#f38920] bg-[#f5f2f0] text-3xl font-bold leading-tight tracking-[-0.015em] ms-4 px-6 py-4"
                 >
-                Rp {{ $product['price'] }}
+                Rp @convert($product['price'])
                 </h3>
                 <div
                 class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4 m-5"
                 >
                     <dt class="font-medium text-gray-900">Terjual</dt>
-                    <dd class="text-gray-700 sm:col-span-2">{{ $product['sold'] }}</dd>
+                    <dd class="text-gray-700 sm:col-span-2">@convert($product['sold'])</dd>
                 </div>
                 <div
                     class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4 m-5"
                 >
                     <dt class="font-medium text-gray-900">Stok</dt>
-                    <dd class="text-gray-700 sm:col-span-2">{{ $product['stock'] }}</dd>
+                    <dd class="text-gray-700 sm:col-span-2">@convert($product['stock'])</dd>
                 </div>
                 <div
                 class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4 m-5"

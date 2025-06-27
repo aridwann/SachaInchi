@@ -15,15 +15,11 @@
     >
       {{ $product['name'] }}
     </p>
-    <p
-      class="text-[#8a7560] text-sm font-normal leading-normal"
-    >
-      Deskripsi singkat
+    <p class="text-[#8a7560] text-sm font-normal leading-normal">
+      Terjual: @convert($product['sold']) 
     </p>
-    <p
-      class="text-[#f38920] text-sm font-bold leading-normal my-2"
-    >
-      Rp {{ $product['price'] }} | Terjual: {{ $product['sold'] }}
+    <p class="text-[#f38920] text-base font-bold leading-normal my-2">
+      Rp. @convert($product['price']) 
     </p>
   </div>
 </div>
