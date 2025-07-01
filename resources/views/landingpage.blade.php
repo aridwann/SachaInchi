@@ -6,13 +6,9 @@
             <div class="@container" id="beranda">
                 <div class="@[480px]:p-4">
                     <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
-                        style="
-                background-image: linear-gradient(
-                    rgba(0, 0, 0, 0.1) 0%,
-                    rgba(0, 0, 0, 0.4) 100%
-                  ),
-                  url('/img/sachainchi.jpeg');
-              ">
+                        style="background-image: linear-gradient(
+                        rgba(0, 0, 0, 0.1) 0%,rgba(0, 0, 0, 0.4) 100%
+                    ), url('/img/sachainchi.jpeg');">
                         <div class="flex flex-col gap-2 text-center">
                             <h1
                                 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
@@ -38,9 +34,9 @@
             </h2>
             <div
                 class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
-                <div class="flex items-stretch p-4 gap-3 w-full">
+                <div class="flex items-stretch p-4 gap-5 w-full">
                     @foreach ($products as $product)
-                        <x-card-top-product :product="$product"></x-card-top-product>
+                        <x-card-product :product="$product" :landingpage="true"></x-card-product>
                     @endforeach
                 </div>
             </div>
