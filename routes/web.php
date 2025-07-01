@@ -19,6 +19,3 @@ Route::get('/products/{product}', function (Product $product) {
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/logout', [UserController::class, 'logout']);
-
-// routes/web.php
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');

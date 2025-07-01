@@ -3,27 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index(Request $request){
-        $query = Product::query();
+    public static function get(){
+        $products = Product::latest();
 
-        if ($request->has('search') && $request->search !== null) {
-            $query->where('name', 'like', '%' . $request->search . '%');
+        if(request('search')){
+            $products->where('name', 'like', '%' . request('search') . '%');
         }
 
-        $products = $query->paginate(10); // pagination recommended
-
-        return view('products', compact('products'));
+        return view('products', ['products' => $products->get()]);
     }
 
-    public static function get(){
-        return view('products', [
-            'products' => Product::all()
-        ]);
-    }
     public static function getTop(){
         return view('landingpage', [
             'products' => Product::orderBy('sold', 'desc')->take(3)->get()
