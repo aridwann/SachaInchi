@@ -18,11 +18,20 @@
             <div class="px-2 py-1 {{ request()->is('products') ? 'bg-[#344a29] rounded-sm' : '' }}">
                 <a class="text-white text-sm font-medium leading-normal" href="/products">Produk</a>
             </div>
+
         </div>
     </div>
     @auth
-        <form action="/logout" method="POST" class="relative" x-data="{ show: false }">
-            <p class="flex min-w-[54px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#e6e6e6] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+        <form action="/logout" method="POST" class="flex gap-4 relative" x-data="{ show: false }">
+            <a href="/cart"
+                class="flex gap-2 min-w-[54px] max-w-[480px] font-medium cursor-pointer items-center justify-center overflow-hidden px-2 text-white text-sm leading-normal tracking-[0.015em]  {{ request()->is('cart') ? 'bg-[#344a29] rounded-sm' : '' }}"">
+                <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill=white>
+                    <path
+                        d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
+                </svg>
+                Keranjang
+            </a>
+            <p class="flex min-w-[54px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#344a29] text-white text-sm font-bold leading-normal tracking-[0.015em]"
                 @click="show = !show">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
                     viewBox="0 0 256 256">
@@ -32,7 +41,7 @@
                 </svg>
             </p>
             @csrf
-            <div class="absolute right-0 bottom-[-110px] flex flex-col min-w-[200px] gap-2 overflow-hidden rounded p-2 border border-gray-300 bg-[#fbfaf9] text-white text-sm leading-normal tracking-[0.015em]"
+            <div class="absolute right-0 bottom-[-80px] flex flex-col min-w-[200px] gap-2 overflow-hidden rounded p-2 border border-[#A3C299] bg-[#172112] text-white text-sm leading-normal tracking-[0.015em]"
                 x-show="show">
                 <div class="flex gap-1 items-center cursor-pointer hover:underline">
                     <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px"
@@ -41,14 +50,6 @@
                             d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z" />
                     </svg>
                     <p>{{ Auth::user()['name'] }}</p>
-                </div>
-                <div class="flex gap-1 items-center cursor-pointer hover:underline">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px"
-                        fill=white>
-                        <path
-                            d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
-                    </svg>
-                    <a href="/keranjang">Keranjang</a>
                 </div>
                 <hr>
                 <button class="flex gap-1 items-center cursor-pointer text-start hover:underline">

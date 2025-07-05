@@ -37,13 +37,13 @@
                     <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4 m-5">
                         <dt class="font-medium text-[#A3C299]">Jumlah</dt>
                         <dd class="text-[#A3C299] sm:col-span-2">
-                            <div class="flex items-center rounded border border-[#A3C299] w-36">
+                            <div class="flex items-center rounded border border-[#A3C299] w-30">
                                 <button type="button" id="kurangBtn"
                                     class="size-10 leading-10 text-[#A3C299] transition hover:opacity-75">
                                     &minus;
                                 </button>
                                 <input type="number" id="Quantity" value="1" min="1"
-                                    class="h-10 w-16 text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none" />
+                                    class="h-10 w-10 text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none" />
                                 <button type="button" id="tambahBtn"
                                     class="size-10 leading-10 text-[#A3C299] transition hover:opacity-75">
                                     &plus;
@@ -54,11 +54,11 @@
                     <div class="flex justify-stretch">
                         <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-start">
                             <button
-                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#54D12B] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em]">
+                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#f5f2f0] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em]">
                                 <span class="truncate">Tambah ke Keranjang</span>
                             </button>
                             <button
-                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#f5f2f0] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em]">
+                                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#54D12B] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em]">
                                 <span class="truncate">Pesan via WhatsApp</span>
                             </button>
                         </div>
