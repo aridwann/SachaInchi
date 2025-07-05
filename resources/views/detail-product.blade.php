@@ -70,7 +70,7 @@
                 <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
                     Deskripsi
                 </h3>
-                <p class="text-[#A3C299] text-base font-normal leading-normal pb-3 pt-1 px-4">
+                <p class="text-[#A3C299] text-base font-normal leading-normal pb-3 pt-1 px-4 text-justify">
                     Kacang Sacha Inchi kami dipanen dari kebun lokal di Desa Sehat,
                     diolah secara tradisional untuk menjaga kualitas dan rasa alami.
                     Kaya akan omega-3, omega-6, dan protein, kacang ini adalah camilan
