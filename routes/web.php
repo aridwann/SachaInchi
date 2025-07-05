@@ -19,3 +19,6 @@ Route::get('/products/{product}', function (Product $product) {
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/logout', [UserController::class, 'logout']);
+Route::get('/keranjang', function () {
+    return view('keranjang');
+});
