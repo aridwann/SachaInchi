@@ -6,7 +6,7 @@
             <form method="GET" action="" class="px-4 py-3">
                 <label class="flex flex-col min-w-40 h-12 w-full">
                     <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
-                        <div class="text-[#8c735a] flex border-none bg-[#f1ede9] items-center justify-center pl-4 rounded-l-xl border-r-0"
+                        <div class="text-[#96C4A8] flex border-none bg-[#264533] items-center justify-center pl-4 rounded-l-xl border-r-0"
                             data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
                                 viewBox="0 0 256 256">
@@ -16,12 +16,12 @@
                             </svg>
                         </div>
                         <input placeholder="Cari produk" type="search"
-                            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#191410] focus:outline-0 focus:ring-0 border-none bg-[#f1ede9] focus:border-none h-full placeholder:text-[#8c735a] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#96C4A8] focus:outline-0 focus:ring-0 border-none bg-[#264533] focus:border-none h-full placeholder:text-[#96C4A8] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
                             name="search" autofocus />
                     </div>
                 </label>
             </form>
-            <h2 class="text-[#191410] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
                 Produk Kami
             </h2>
             <div class="grid grid-cols-5 gap-3 p-4">

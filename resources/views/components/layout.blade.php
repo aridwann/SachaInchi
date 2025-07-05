@@ -1,25 +1,22 @@
 <html>
-  <head>
+
+<head>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
-    />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
     <title>SachaInchi</title>
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     @vite('resources/css/app.css')
-  </head>
-  <body>
-    <div
-      class="relative flex size-full min-h-screen flex-col bg-[#fbfaf9] group/design-root overflow-x-hidden"
-      style="font-family: Inter, 'Noto Sans', sans-serif"
-    >
-      <div class="layout-container flex h-full grow flex-col">
-        {{ $slot }}
-      </div>
+</head>
+
+<body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#172112] group/design-root overflow-x-hidden"
+        style="font-family: Inter, 'Noto Sans', sans-serif">
+        <div class="layout-container flex h-full grow flex-col">
+            {{ $slot }}
+        </div>
     </div>
-  </body>
+</body>
+
 </html>
