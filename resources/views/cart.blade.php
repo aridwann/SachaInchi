@@ -7,7 +7,7 @@
                 <h1 class="text-2xl sm:text-3xl font-bold mb-6 text-white">Keranjang</h1>
 
                 <!-- Desktop Table -->
-                <div class="overflow-x-auto border border-[#A3C299] rounded-xl hidden md:block">
+                <div class="overflow-x-auto border border-[#A3C299] rounded-xl md:block">
                     <table class="min-w-full text-sm text-[#A3C299]">
                         <thead class="bg-[#172112]">
                             <tr>
@@ -53,7 +53,7 @@
                 </div>
 
                 <!-- Mobile Table -->
-                <div class="md:hidden flex flex-col gap-4">
+                {{-- <div class="md:hidden flex flex-col gap-4">
                     @foreach ([['Kemeja Katun Biru', 2, 150000], ['Celana Jeans Hitam', 1, 200000]] as [$nama, $qty, $harga])
                         <div class="border border-[#A3C299] rounded-xl p-4 bg-white">
                             <div class="flex items-start gap-4">
@@ -86,7 +86,7 @@
                             </div>
                         </div>
                     @endforeach
-                </div>
+                </div> --}}
 
                 <!-- Subtotal & Button -->
                 <div class="mt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
