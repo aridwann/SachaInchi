@@ -22,9 +22,9 @@
         </div>
     </div>
     @auth
-        <form action="/logout" method="POST" class="flex gap-4 relative" x-data="{ show: false }">
+        <form action="/logout" method="POST" class="flex gap-4 items-center relative" x-data="{ show: false }">
             <a href="/cart"
-                class="flex gap-2 min-w-[54px] max-w-[480px] font-medium cursor-pointer items-center justify-center overflow-hidden px-2 text-white text-sm leading-normal tracking-[0.015em]  {{ request()->is('cart') ? 'bg-[#344a29] rounded-sm' : '' }}"">
+                class="flex gap-2 h-7 min-w-[54px] max-w-[480px] font-medium cursor-pointer items-center justify-center overflow-hidden px-2 text-white text-sm leading-normal tracking-[0.015em]  {{ request()->is('cart') ? 'bg-[#344a29] rounded-sm' : '' }}">
                 <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill=white>
                     <path
                         d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
@@ -33,7 +33,7 @@
             </a>
             <p class="flex min-w-[54px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#344a29] text-white text-sm font-bold leading-normal tracking-[0.015em]"
                 @click="show = !show">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
                     viewBox="0 0 256 256">
                     <path
                         d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z">

@@ -21,31 +21,31 @@
                             @foreach ([['Kemeja Katun Biru', 2, 150000], ['Celana Jeans Hitam', 1, 200000]] as [$nama, $qty, $harga])
                                 <tr class="border-t border-[#A3C299]">
                                     <td class="p-3 flex items-center gap-3">
-                                        <input type="checkbox" class="w-4 h-4" />
+                                        <input type="checkbox" class="w-4 h-4 cursor-pointer" />
                                         <div class="w-20 h-20 bg-cover bg-center rounded-lg"
                                             style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKdT3sQ9SKoA7leDNOWiz7dIDVMBK-jFHWO_eNlFai2-4C3bt3p3np2456efdSGxvSZEQgjdpcKaO6-dEZeJcxY2xBuhSPAcgKDk0zfkxU27hdQD2XR7py4NYGW7DmrmcVic2NnR72TH8k7FWwB6be1gjTXSG-xB2tLVz1GJuQVRQaDFpCLO0KST7zdueyozY4ZjYHG-M-udMUlcGSnin7ssbXrZMIOB9kigKiHRo8X_AkyHVW00eHLEY9GthKsuBScvByDN5PqBHA');">
                                         </div>
                                         {{ $nama }}
                                     </td>
-                                    <td class="p-3">Rp {{ number_format($harga, 0, ',', '.') }}</td>
+                                    <td class="p-3">Rp @convert($harga)</td>
                                     <td class="p-3">
                                         <div class="flex items-center gap-2">
                                             <div class="flex items-center rounded border border-[#A3C299] w-30">
                                                 <button type="button" id="kurangBtn"
-                                                    class="size-10 leading-10 text-[#A3C299] transition hover:opacity-75">
+                                                    class="size-10 leading-10 text-[#A3C299] transition hover:opacity-75 cursor-pointer">
                                                     &minus;
                                                 </button>
-                                                <input type="number" id="Quantity" value="1" min="1"
+                                                <input type="number" id="Quantity" min="1"
                                                     class="h-10 w-10 text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
                                                     value="{{ $qty }}" />
                                                 <button type="button" id="tambahBtn"
-                                                    class="size-10 leading-10 text-[#A3C299] transition hover:opacity-75">
+                                                    class="size-10 leading-10 text-[#A3C299] transition hover:opacity-75 cursor-pointer">
                                                     &plus;
                                                 </button>
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="p-3">Rp {{ number_format($qty * $harga, 0, ',', '.') }}</td>
+                                    <td class="p-3">Rp @convert($qty * $harga)</td>
                                 </tr>
                             @endforeach
                         </tbody>
