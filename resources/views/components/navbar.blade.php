@@ -31,15 +31,11 @@
                 </svg>
                 Keranjang
             </a>
-            <p class="flex min-w-[54px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#344a29] text-white text-sm font-bold leading-normal tracking-[0.015em]"
-                @click="show = !show">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
-                    viewBox="0 0 256 256">
-                    <path
-                        d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z">
-                    </path>
-                </svg>
-            </p>
+            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" @click="show = !show"
+                style="
+              background-image: url('{{ asset('img/default-avatar.png') }}');
+            ">
+            </div>
             @csrf
             <div class="absolute right-0 bottom-[-80px] flex flex-col min-w-[200px] gap-2 overflow-hidden rounded p-2 border border-[#A3C299] bg-[#172112] text-white text-sm leading-normal tracking-[0.015em]"
                 x-show="show">
