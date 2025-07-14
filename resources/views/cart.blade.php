@@ -18,12 +18,12 @@
                             </tr>
                         </thead>
                         <tbody class="bg-[#172112]">
-                            @foreach ([['Kemeja Katun Biru', 2, 150000], ['Celana Jeans Hitam', 1, 200000]] as [$nama, $qty, $harga])
+                            @foreach ([['Sacha Inchi Oil', 2, 153802, 'https://lh3.googleusercontent.com/aida-public/AB6AXuB3fap6X4ERGXVkhw1MTbnivMBIy4IrMdtNNQd41yXIsjOCOK-FdhQCEOtA_xIuWmDgIj7Ltv39o9XORUX88GrAJW4CSXiAHp1EEUnMaSwtX8nJFNs1xE4w5q6rvnPVd5B2EShMw8BkUXx8cctEJaPcxbpc9a6THeJIcGQtHk8CwJ2KwHdMdlyJqDzn9A_X_-Ap2jDyDAwbjp6mRfifvaaZ4No6xIG3TV-gabnJVW7I-RKI8PNiYHcJrCN1RuriFZ_jHqjJnZ_dIttn'], ['Sacha Inchi Seeds', 1, 784008, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAKnah2IcgO9x3y9TxKoU6MLfWQeZPraYZo7yaa5c_c1RS6xRrBCoGmpKl915D1C51LzZCmXh-SdjF6gVeQw6kmy5cQkr5WHA6fRjoDSVZ8ft5Gxq7IG4HFrSoeWniVUVfZm0NGY9mLsTUtE40WnxVKcfU-K_4kwc4Rk4Pk9yfpt9YPwwvB1wlWGsK7QJKcKIrRGX6r-eY1Ezq7xa5TXGQ-20yGVsC0tRlkPJB19pKollnDKLDK-XgMXahc7VQCTPod-LkBb5nVlQuL']] as [$nama, $qty, $harga, $img])
                                 <tr class="border-t border-[#A3C299]">
                                     <td class="p-3 flex items-center gap-3">
                                         <input type="checkbox" class="w-4 h-4 cursor-pointer" />
                                         <div class="w-20 h-20 bg-cover bg-center rounded-lg"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKdT3sQ9SKoA7leDNOWiz7dIDVMBK-jFHWO_eNlFai2-4C3bt3p3np2456efdSGxvSZEQgjdpcKaO6-dEZeJcxY2xBuhSPAcgKDk0zfkxU27hdQD2XR7py4NYGW7DmrmcVic2NnR72TH8k7FWwB6be1gjTXSG-xB2tLVz1GJuQVRQaDFpCLO0KST7zdueyozY4ZjYHG-M-udMUlcGSnin7ssbXrZMIOB9kigKiHRo8X_AkyHVW00eHLEY9GthKsuBScvByDN5PqBHA');">
+                                            style="background-image: url({{ $img }});">
                                         </div>
                                         {{ $nama }}
                                     </td>
