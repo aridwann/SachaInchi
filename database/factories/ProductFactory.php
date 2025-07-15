@@ -16,12 +16,14 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
+        $stock = ['Tersedia', 'Kosong'];
         return [
             'name' => fake()->word(),
             "img" => fake()->text(100),
             'price' => fake()->randomNumber(6, true),
-            'stock' => fake()->randomNumber(2, true),
-            'sold' => fake()->randomNumber(4, true)
+            'stock' => $stock[rand(0,1)],
+            'ishide' => rand(0,1),
+            'description' => fake()->sentence(30, true),
         ];
     }
 }
