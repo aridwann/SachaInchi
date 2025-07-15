@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->integer('price');
-            $table->integer('stock');
-            $table->integer('sold');
+            $table->enum('stock', ['Tersedia', 'Kosong'])->default('Tersedia');
             $table->string('img');
+            $table->text('description');
+            $table->boolean('ishide');
             $table->timestamps();
         });
     }

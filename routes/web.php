@@ -28,3 +28,15 @@ Route::get('/cart/clear', function () {
     return response()->json(['success' => true]);
 });
 Route::post('/cart/remove-selected', [CartController::class, 'removeSelected'])->name('cart.removeSelected');
+
+Route::get('/dashboard', function (){
+    return view('dashboard', ['products' => Product::all()]);
+});
+// Route untuk menampilkan form edit produk
+Route::get('/dashboard/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
+
+// Route untuk memproses update produk
+Route::put('/dashboard/{product}', [ProductController::class, 'update'])->name('products.update');
+
+// Route hapus
+Route::delete('/dashboard/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
