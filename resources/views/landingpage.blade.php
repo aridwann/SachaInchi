@@ -60,7 +60,7 @@
               ">
                     </div>
                     <div>
-                        <p class="text-[#172112] text-base font-medium leading-normal">
+                        <p class="text-white text-base font-medium leading-normal">
                             Desa Cibokor
                         </p>
                         <p class="text-[#A3C299] text-sm font-normal leading-normal">

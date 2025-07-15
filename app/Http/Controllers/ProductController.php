@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    public static function index(Request $request){
+    public static function index(){
         $products = Product::latest();
 
         if(request('search')){
-            $products->where('name', 'like', "%$request->search%");
+            $products->where('name', 'like', "%".request('search')."%");
         }
 
         return view('products', ['products' => $products->get()]);
@@ -44,7 +45,10 @@ class ProductController extends Controller
         
         if ($request->hasFile('img')) {
             if ($product->img) {
-                Storage::disk('public')->delete($product->img);
+                // development only!!
+                $newName = Str::after($product->img, 'img/');
+                //--
+                Storage::disk('public')->delete('product-images/'.$newName);
             }
             $validated['img'] = $request->file('img')->store('product-images', 'public');
         }

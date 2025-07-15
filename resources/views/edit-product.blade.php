@@ -37,12 +37,14 @@
 
                         <div class="mb-6">
                             <label for="stock" class="block text-sm font-medium text-[#A3C299] mb-2">Stok</label>
-                            <select type="text" name="stock" id="stock"
-                                value="{{ old('stock', $product->stock) }}"
+                            <select name="stock" id="stock"
                                 class="w-full bg-[#2f4328] border border-[#436039] text-white rounded-lg p-3 focus:ring-[#54D12B] focus:border-[#54D12B]">
                                 <option value="">Pilih Status</option>
-                                <option value="Tersedia">Tersedia</option>
-                                <option value="Kosong">Kosong</option>
+                                <option value="Tersedia"
+                                    {{ old('stock', $product->stock) === 'Tersedia' ? 'selected' : '' }}>Tersedia
+                                </option>
+                                <option value="Kosong"
+                                    {{ old('stock', $product->stock) === 'Kosong' ? 'selected' : '' }}>Kosong</option>
                             </select>
                             @error('stock')
                                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
