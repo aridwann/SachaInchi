@@ -18,7 +18,7 @@ class ProductFactory extends Factory
     {
         $stock = ['Tersedia', 'Kosong'];
         return [
-            'name' => fake()->word(),
+            'name' => fake()->name(),
             "img" => fake()->text(100),
             'price' => fake()->randomNumber(6, true),
             'stock' => $stock[rand(0,1)],

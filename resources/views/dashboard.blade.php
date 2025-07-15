@@ -19,13 +19,15 @@
                                         </path>
                                     </svg>
                                 </div>
-                                <div class="flex justify-between w-full items-center">
-                                    <input placeholder="Cari Produk"
-                                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#2f4328] focus:border-none h-full placeholder:text-[#a3c398] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
-                                        value="" />
+                                <div class="flex justify-between w-full gap-4 items-center">
+                                    <form action="/dashboard" class="w-full">
+                                        <input placeholder="Cari Produk"
+                                            class="form-input w-full flex min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#2f4328] focus:border-none h-full placeholder:text-[#a3c398] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                                            name="query" autofocus />
+                                    </form>
                                     <button
-                                        class="flex ms-7 min-w-[84px] max-w-[150px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-10 @[480px]:px-4 bg-[#54D12B] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
-                                        onclick="location.href = '/#'">
+                                        class="flex min-w-fit max-w-[150px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-10 @[480px]:px-4 bg-[#54D12B] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                                        onclick="location.href = '/'">
                                         <span class="truncate">Tambah Produk</span>
                                     </button>
                                 </div>
@@ -57,7 +59,7 @@
                                             Deskripsi Produk
                                         </th>
                                         <th
-                                            class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-776 px-4 py-3 text-left text-white w-60 text-[#a3c398] text-sm font-medium leading-normal">
+                                            class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-776 px-4 py-3 text-left text-white w-60 text-sm font-medium leading-normal">
                                             Aksi
                                         </th>
                                     </tr>
@@ -66,7 +68,7 @@
                                     @foreach ($products as $product)
                                         <tr class="border-t border-t-[#436039]">
                                             <td
-                                                class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-120 h-[72px] px-4 py-2 text-[#a3c398] text-sm font-normal leading-normal">
+                                                class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-120 h-[72px] px-4 py-2 text-[#a3c398] text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
                                                 {{ $loop->iteration }}</td>
                                             <td
                                                 class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-176 h-[72px] px-4 py-2 w-14 text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
@@ -74,41 +76,50 @@
                                                     style='background-image: url("{{ $product->img }}");'></div>
                                             </td>
                                             <td
-                                                class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-296 h-[72px] px-4 py-2 w-[400px] text-white text-sm font-normal leading-normal">
+                                                class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-296 h-[72px] px-4 py-2 w-[400px] text-white text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
                                                 {{ $product->name }}</td>
                                             <td
-                                                class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-416 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal">
+                                                class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-416 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
                                                 <button
                                                     class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#2f4328] text-white text-sm font-medium leading-normal w-full">
                                                     <span class="truncate">{{ $product->stock }}</span>
                                                 </button>
                                             </td>
                                             <td
-                                                class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-536 h-[72px] px-4 py-2 w-[400px] text-[#a3c398] text-sm font-normal leading-normal">
+                                                class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-536 h-[72px] px-4 py-2 w-[400px] text-[#a3c398] text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
                                                 Rp. {{ number_format($product->price, 0) }}
                                             </td>
                                             <td
-                                                class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-656 h-[72px] px-4 py-2 w-[400px] text-[#a3c398] text-sm font-normal leading-normal">
-                                                Minyak Sacha Inchi, 100% murni, kaya omega-3...
+                                                class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-656 h-[72px] px-4 py-2 w-[400px] text-[#a3c398] text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
+                                                {{ Str::limit($product->description, 30) }}
                                             </td>
                                             <td
                                                 class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-776 h-[72px] px-4 py-2 w-60 text-[#a3c398] text-sm font-bold leading-normal tracking-[0.015em]">
                                                 <a href="/dashboard/{{ $product->id }}/edit"
-                                                    class="text-green-500">Edit</a> |
+                                                    class="text-green-500 me-1">Edit</a> |
                                                 <form action="/dashboard/{{ $product->id }}" method="post"
-                                                    class="text-red-500 inline">
+                                                    class="ms-1 text-red-500 inline">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="cursor-pointer">Hapus</button>
                                                 </form>
-                                                <form method="post" class="text-gray-500 ">
-                                                    <button class="cursor-pointer">Sembunyikan</button>
-                                                </form>
+                                                @if ($product->ishide)
+                                                    <form method="post" class="text-gray-400 ">
+                                                        <button class="cursor-pointer">Tampilkan</button>
+                                                    </form>
+                                                @else
+                                                    <form method="post" class="text-gray-400 ">
+                                                        <button class="cursor-pointer">Sembunyikan</button>
+                                                    </form>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
+                        </div>
+                        <div class="px-4 py-2">
+                            {{ $products->links() }}
                         </div>
                         <style>
                             @container(max-width:120px)

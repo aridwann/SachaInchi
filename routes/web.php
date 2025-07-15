@@ -2,12 +2,12 @@
 
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\CartController;
 
 Route::get('/', [ProductController::class, 'getTop']);
-Route::get('/products', [ProductController::class, 'get']);
+Route::get('/products', [ProductController::class, 'index']);
 Route::get('/login', fn () => view('login'));
 Route::get('/register', fn () => view('register'));
 
@@ -30,13 +30,19 @@ Route::get('/cart/clear', function () {
 Route::post('/cart/remove-selected', [CartController::class, 'removeSelected'])->name('cart.removeSelected');
 
 Route::get('/dashboard', function (){
-    return view('dashboard', ['products' => Product::all()]);
+    $products = Product::latest();
+
+    if(request('query')){
+        $products->where('name', 'like', '%'.request('query').'%');
+    }
+
+    return view('dashboard', ['products' => $products->paginate(6)->withQueryString()]);
 });
 // Route untuk menampilkan form edit produk
 Route::get('/dashboard/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
 
 // Route untuk memproses update produk
-Route::put('/dashboard/{product}', [ProductController::class, 'update'])->name('products.update');
+Route::patch('/dashboard/{product}', [ProductController::class, 'update'])->name('products.update');
 
 // Route hapus
 Route::delete('/dashboard/{product}', [ProductController::class, 'destroy'])->name('products.destroy');

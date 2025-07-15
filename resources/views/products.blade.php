@@ -26,7 +26,9 @@
             </h2>
             <div class="grid grid-cols-5 gap-3 p-4">
                 @foreach ($products as $product)
-                    <x-card-product :product="$product" :landingpage="false"></x-card-product>
+                    @if (!$product->ishide)
+                        <x-card-product :product="$product" :landingpage="false"></x-card-product>
+                    @endif
                 @endforeach
             </div>
         </div>

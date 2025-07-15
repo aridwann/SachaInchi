@@ -36,7 +36,9 @@
                 class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
                 <div class="flex items-stretch p-4 gap-5 w-full">
                     @foreach ($products as $product)
-                        <x-card-product :product="$product" :landingpage="true"></x-card-product>
+                        @if (!$product->ishide)
+                            <x-card-product :product="$product" :landingpage="true"></x-card-product>
+                        @endif
                     @endforeach
                 </div>
             </div>
