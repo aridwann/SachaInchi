@@ -40,5 +40,11 @@ class DatabaseSeeder extends Seeder
             'name' => 'Sacha Inchi Snacks',
             'img' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAJPlGLbcQBa-wIKbP5eHswdOS3BgtvZM-8ieUgXaZmnNVq9r4T4qEpcrbdAv7iIlHRmZOHtRHeHwbELqj8uKk1X5uhTkMkJfck0SNzw2mWoS9HLpL3N91lJM-0kyjsCEWb69NuGKdu5-Un59fCYE7X9O840LVdOfII_hRDIdEpFRX8ofnaDSQcbxwbFOdrPyFJluuSjeO4JhHCpcmqLYh1rXSy6mgwDRmA7K9Bi24WV1KQ2uQLGKIOR6TpOHBZQAX1vZr54I6BS-e9'
         ]);
+        User::factory()->create([
+            'name' => 'Admin Ganteng',
+            'email' => 'a@gmail.com',
+            'password' => 'a',
+            'is_admin' => true,  
+        ]);
     }
 }
