@@ -5,7 +5,7 @@
    `git clone https://github.com/aridwann/SachaInchi.git`
 3. Buka folder **sachainchi** di VS Code
 4. Buat file **.env**, caranya:  
-   a. `cp .env.example .env`
+   a. `cp .env.example .env`  
    b. `php artisan key:generate`
 6. Buka terminal VS Code, Install paket node yang diperlukan  
    `npm install`
