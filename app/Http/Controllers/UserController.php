@@ -9,6 +9,13 @@ use Illuminate\Http\RedirectResponse;
 
 class UserController extends Controller
 {
+    public function showLogin  () {
+        return view('login');
+    }
+    public function showRegister  () {
+        return view('register');
+    }
+
     public function register(Request $request) {
         $credentials = $request->validate([
             "name" => "required",
@@ -22,7 +29,7 @@ class UserController extends Controller
         return redirect("/login");
     }
     
-    public static function logout(Request $req): RedirectResponse {
+    public function logout(Request $req): RedirectResponse {
         Auth::logout();
 
         $req->session()->invalidate();
@@ -32,7 +39,7 @@ class UserController extends Controller
         return redirect('/');
     }
 
-    public static function login(Request $req): RedirectResponse {
+    public function login(Request $req): RedirectResponse {
         $credentials = $req->validate([
             'email' => ['required', 'email'],
             'password' => 'required'

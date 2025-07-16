@@ -83,4 +83,9 @@ class CartController extends Controller
 
         return response()->json(['success' => true]);
     }
+
+    public function clear(){
+        session()->forget('cart');
+        return response()->json(['success' => true]);
+    }
 }
