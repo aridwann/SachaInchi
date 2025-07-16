@@ -19,6 +19,16 @@ class ProductController extends Controller
         return view('products', ['products' => $products->get()]);
     }
 
+    public static function indexAdmin(){
+        $products = Product::latest();
+    
+        if(request('query')){
+            $products->where('name', 'like', '%'.request('query').'%');
+        }
+    
+        return view('dashboard', ['products' => $products->paginate(6)->withQueryString()]);
+    }
+
     public static function getTop(){
         return view('landingpage', [
             'products' => Product::take(3)->get()
@@ -30,9 +40,10 @@ class ProductController extends Controller
         return view('edit-product', compact('product'));
     }
 
-    /**
-     * Mengupdate produk di database.
-     */
+    public function show(Product $product){
+        return view('detail-product', ['product' => $product]);
+    }
+
     public function update(Request $request, Product $product)
     {
         $validated = $request->validate([
