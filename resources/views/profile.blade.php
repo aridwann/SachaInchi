@@ -8,10 +8,23 @@
             <div class="flex p-4 @container">
                 <div class="flex w-full flex-col gap-4 items-center">
                     <div class="flex gap-4 flex-col items-center">
-                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32 relative"
                             style="
-                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPDUiZNAbluCgoEr_eNHNdycV33l5p4wFUYAWoX7RlNvz1BAkQw6dMijPJGRF2ssxNtOEGDW-lTNNLLJPWAaE30Ks-OyzNibZ9K57RO6A_CLu-BGPLfoM_uXN0u1F5t8JOmBQ8xaPkv4P3HdNypio9a_RukQgrbVqpkUWkheBDTKe5HgE3Zi1PFJf1iFGAxqJA-4cioy-5I5keygkzeYIVKBXsr0uwV0EbA-39l_0o3tIlkc9wWS8rc-pZ8qV9Ttk2ZZP1tRoEHXrg');
+                      background-image: url('{{ asset('img/default-avatar.png') }}');
                     ">
+                            <div class="w-full items-end px-4 py-3">
+                                <label
+                                    class="absolute bottom-0 right-0 flex justify-center items-center rounded-full w-10 h-10 bg-[#172112] border-[#54D12B] cursor-pointer hover:scale-95 border-2"
+                                    for="user_avatar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                        width="24px" fill="#54D12B">
+                                        <path
+                                            d="M120-120v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm584-528 56-56-56-56-56 56 56 56Z" />
+                                    </svg>
+                                </label>
+                                <input class="hidden" aria-describedby="user_avatar_help" id="user_avatar"
+                                    type="file" accept="image/jpg, image/png, image/jpeg" />
+                            </div>
                         </div>
                         <div class="flex flex-col items-center justify-center">
                             <p class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] text-center">
@@ -54,16 +67,7 @@
 Planet Mars, Blok M, Goa Warna Coklat</textarea>
                 </label>
             </div>
-            <div class="w-full items-end px-4 py-3">
-                <label class="block mb-2 text-base font-medium text-white" for="user_avatar">Upload file</label>
-                <input
-                    class="block w-full lg:w-1/2 text-base/10 text-white border border-[#A3C299] rounded-r-lg cursor-pointer bg-[#202d19] focus:outline-none dark:placeholder-[#A3C299]"
-                    aria-describedby="user_avatar_help" id="user_avatar" type="file"
-                    accept="image/jpg, image/png, image/jpeg" />
-                <div class="mt-1 text-sm text-white" id="user_avatar_help">
-                    .png, .jpg, atau .jpeg
-                </div>
-            </div>
+
             <button
                 class="cursor-pointer max-w-max flex-grow-0 rounded-lg h-10 px-4 bg-[#54D12B] text-[#172112] text-sm font-bold mx-4 my-3">
                 Simpan Perubahan
