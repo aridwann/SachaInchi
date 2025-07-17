@@ -50,7 +50,7 @@
 
             <div class="mt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <p class="text-base text-white">Subtotal: <strong id="subtotal">Rp 0</strong></p>
-                <button onclick="prosesPesanan()"
+                <button onclick="prosesPesanan({{ Auth::user() }})"
                     class="flex items-center gap-2 bg-[#54D12B] text-[#172112] font-bold px-4 py-2 rounded-xl text-sm hover:bg-[#4cc224] transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 256 256">
                         <path
@@ -147,10 +147,11 @@
             cb.addEventListener('change', updateSubtotalFromCheckbox);
         });
 
-        function prosesPesanan() {
+        function prosesPesanan(user) {
             const checkboxes = document.querySelectorAll('.checkbox-item');
             let total = 0;
-            let pesan = "Halo, saya ingin memesan:\n";
+            let pesan =
+                `*Nama:* ${user.name} \n*No. HP:* ${user.phone}\n*Alamat:* ${user.address}\n*Pesanan:*\n`;
             let selected = 0;
             let idsToRemove = [];
 

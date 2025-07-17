@@ -20,7 +20,7 @@ class UserController extends Controller
     public function register(Request $request) {
         $credentials = $request->validate([
             "name" => "required",
-            "email" => "required",
+            "email" => "required|email:dns",
             "password" => "required",
         ]);
 
@@ -42,7 +42,7 @@ class UserController extends Controller
 
     public function login(Request $req): RedirectResponse {
         $credentials = $req->validate([
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email:dns'],
             'password' => 'required'
         ]);
 

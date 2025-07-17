@@ -6,19 +6,28 @@
             @csrf
             <h1 class="text-3xl md:text-4xl font-bold text-center text-white">SachaInchi</h1>
 
-            <div class="w-full max-w-sm border-b border-white">
+            <div class="w-full max-w-sm">
                 <input type="text" placeholder="Nama" name="name"
-                    class="w-full p-4 text-base focus:outline-none bg-transparent text-white placeholder:text-white" />
+                    class="w-full p-4 text-base focus:outline-none bg-transparent text-white placeholder:text-white border-b border-white" />
+                @error('name')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
             </div>
 
-            <div class="w-full max-w-sm border-b border-white">
-                <input type="email" placeholder="Email" name="email"
-                    class="w-full p-4 text-base focus:outline-none bg-transparent text-white placeholder:text-white" />
+            <div class="w-full max-w-sm">
+                <input type="text" placeholder="Email" name="email"
+                    class="w-full p-4 text-base focus:outline-none bg-transparent text-white placeholder:text-white border-b border-white" />
+                @error('email')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
             </div>
 
-            <div class="w-full max-w-sm border-b border-white">
+            <div class="w-full max-w-sm">
                 <input type="password" placeholder="Password" name="password"
-                    class="w-full p-4 text-base focus:outline-none bg-transparent text-white placeholder:text-white" />
+                    class="w-full p-4 text-base focus:outline-none bg-transparent text-white placeholder:text-white border-b border-white" />
+                @error('password')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
             </div>
 
             <div class="w-full flex justify-end max-w-sm mt-2">
