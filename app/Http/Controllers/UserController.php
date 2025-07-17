@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -54,5 +55,30 @@ class UserController extends Controller
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
+    }
+
+    public function show(){
+        return view('profile', ['user' => Auth::user()]);
+    }
+
+    public function update(Request $request, User $user)
+    {
+        // dd($request->all());
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'phone' => 'required|numeric',
+            'address' => 'required|string',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:10240'
+        ]);
+        
+        if ($request->hasFile('avatar')) {
+            if ($user->avatar) {
+                Storage::disk('public')->delete($user->avatar);
+            }
+            $validated['avatar'] = $request->file('avatar')->store('user-images', 'public');
+        }
+        $user->update($validated);
+        
+        return redirect("/profile")->with('success', 'Profil berhasil diperbarui.');
     }
 }

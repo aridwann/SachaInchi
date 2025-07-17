@@ -44,11 +44,9 @@
                     Keranjang
                 </a>
             @endif
-            <div class="select-none bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+            <div class="select-none bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 cursor-pointer hover:scale-95"
                 @click="show = !show"
-                style="
-              background-image: url('{{ asset('img/default-avatar.png') }}');
-            ">
+                style="background-image: url('{{ asset(Auth::user()->avatar ?? 'img/default-avatar.png') }}');">
             </div>
             <div class="{{ Auth::user()->is_admin ? 'bottom-[-110px]' : 'bottom-[-80px]' }} absolute right-0 flex flex-col min-w-[200px] gap-2 overflow-hidden rounded p-2 border border-[#A3C299] bg-[#172112] text-white text-sm leading-normal tracking-[0.015em]"
                 x-show="show">
