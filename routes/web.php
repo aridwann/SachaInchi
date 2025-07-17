@@ -23,9 +23,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
     Route::get('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
     Route::post('/cart/remove-selected', [CartController::class, 'removeSelected'])->name('cart.removeSelected');
-Route::get('/profile', function(){
-    return view('profile');
-});
+    Route::get('/profile', [UserController::class, 'show']);
+    Route::patch('/profile/{user}', [UserController::class, 'update']);
 });
 
 Route::middleware([IsAdmin::class])->group(function () {
