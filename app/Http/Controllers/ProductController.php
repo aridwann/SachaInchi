@@ -61,7 +61,7 @@ class ProductController extends Controller
                 //--
                 Storage::disk('public')->delete('product-images/'.$newName);
             }
-            $validated['img'] = $request->file('img')->store('product-images', 'public');
+            $validated['img'] = "storage/".$request->file('img')->store('product-images', 'public');
         }
     
         $product->update($validated);
