@@ -14,7 +14,7 @@
                 <div class="flex flex-col md:flex-row gap-8 p-4">
                     <div class="w-full md:w-1/2">
                         <label for="image" class="block text-sm font-medium text-[#A3C299] mb-2">Gambar Produk</label>
-                        <img src="{{ asset('storage/' . $product->img) }}" alt="{{ $product->name }}"
+                        <img src="{{ asset($product->img) }}" alt="{{ $product->name }}"
                             class="rounded-xl mb-4 w-100 object-cover aspect-[9/10]">
                         <input accept="image/png,image/jpg,image/jpeg" type="file" name="img" id="image"
                             class="block w-100 rounded-lg border border-[#4abd21] text-sm text-[#A3C299] file:mr-4 file:py-2 file:px-4 file:rounded-s-lg file:border-0 file:text-sm file:font-semibold file:bg-[#54D12B] file:text-[#172112] hover:file:bg-[#4abd21]">

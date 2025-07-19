@@ -3,7 +3,7 @@
 <div class="flex flex-col hover:scale-105 transition cursor-pointer {{ $landingpage ? 'h-full flex-1 gap-4 rounded-lg min-w-40' : 'gap-3 pb-3' }}"
     onclick="location.href = 'products/{{ $product['id'] }}'">
     <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-        style="background-image: url({{ asset('storage/' . $product->img) }});">
+        style="background-image: url({{ asset($product->img) }});">
     </div>
     <div>
         <p class="text-white text-base font-medium leading-normal">

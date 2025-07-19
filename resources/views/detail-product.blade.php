@@ -18,7 +18,7 @@
             <div class="flex">
                 <div class="w-1/2 m-4 gap-1 overflow-hidden bg-white @[480px]:gap-2 aspect-[9/10] rounded-xl flex">
                     <div class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1"
-                        style="background-image: url({{ asset('storage/' . $product->img) }});">
+                        style="background-image: url({{ asset($product->img) }});">
                     </div>
                 </div>
                 <div>
