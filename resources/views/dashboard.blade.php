@@ -25,7 +25,7 @@
                             </form>
                             <button
                                 class="flex min-w-fit max-w-[150px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-10 @[480px]:px-4 bg-[#54D12B] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
-                                onclick="location.href = '/'">
+                                onclick="location.href = '/dashboard/create'">
                                 <span class="truncate">Tambah Produk</span>
                             </button>
                         </div>
@@ -73,6 +73,7 @@
                                         <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10"
                                             style='background-image: url("{{ $product->img }}");'></div>
                                     </td>
+                                    {{-- @dd($product->img) --}}
                                     <td
                                         class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-296 h-[72px] px-4 py-2 w-[400px] text-white text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
                                         {{ $product->name }}</td>
@@ -101,15 +102,16 @@
                                             @method('DELETE')
                                             <button class="cursor-pointer">Hapus</button>
                                         </form>
-                                        @if ($product->ishide)
-                                            <form method="post" class="text-gray-400 ">
-                                                <button class="cursor-pointer">Tampilkan</button>
-                                            </form>
-                                        @else
-                                            <form method="post" class="text-gray-400 ">
-                                                <button class="cursor-pointer">Sembunyikan</button>
-                                            </form>
-                                        @endif
+                                        <form method="post" action="/dashboard/{{ $product->id }}/ishide" class="text-gray-400 ">
+                                            @csrf
+                                            @method('PATCH')
+                                            @if ($product->ishide)
+                                            <button class="cursor-pointer">Tampilkan</button>
+                                            @else
+                                            <button class="cursor-pointer">Sembunyikan</button>
+                                            @endif
+                                        </form>
+                                        {{-- @dd($product->ishide) --}}
                                     </td>
                                 </tr>
                             @endforeach

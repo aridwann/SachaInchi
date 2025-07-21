@@ -68,9 +68,40 @@ class ProductController extends Controller
         
         return redirect("/dashboard")->with('success', 'Produk berhasil diperbarui.');
     }
+    public function store(Request $request, Product $product)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'description' => 'nullable|string',
+            'stock' => 'required|in:Tersedia,Kosong', 
+            'img' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:10240'
+        ]);
+        
+                if ($request->hasFile('img')) {
+                    $validated['img'] = "storage/".$request->file('img')->store('product-images', 'public');
+                }
+        Product::create($validated);        
+        return redirect("/dashboard")->with('success', 'Produk berhasil ditambahkan.');
+    }
+    
+    public function updateishide(Product $product)
+    {
+        $product->update([
+            'ishide' => !$product->ishide
+        ]);
+        // dd("dari kontroler");
+        
+        return redirect("/dashboard")->with('success', 'Status produk berhasil diperbarui.');
+    }
 
     public function destroy(Product $product){
         $product->delete();
         return redirect("dashboard");
+    }
+
+    public function create()
+    {
+        return view('create-product');
     }
 }
