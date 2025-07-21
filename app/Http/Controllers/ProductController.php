@@ -75,10 +75,12 @@ class ProductController extends Controller
             'price' => 'required|numeric|min:0',
             'description' => 'nullable|string',
             'stock' => 'required|in:Tersedia,Kosong', 
-            'img' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:10240'
+            'img' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:10240'
         ]);
         
-        $validated['img'] = "storage/".$request->file('img')->store('product-images', 'public');
+                if ($request->hasFile('img')) {
+                    $validated['img'] = "storage/".$request->file('img')->store('product-images', 'public');
+                }
         Product::create($validated);        
         return redirect("/dashboard")->with('success', 'Produk berhasil ditambahkan.');
     }
