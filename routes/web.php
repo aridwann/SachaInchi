@@ -29,7 +29,10 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware([IsAdmin::class])->group(function () {
     Route::get('/dashboard', [ProductController::class, 'indexAdmin']);
+    Route::get('/dashboard/create', [ProductController::class, 'create'])->name('products.create');
+    Route::post('/dashboard', [ProductController::class, 'store'])->name('products.store');
     Route::get('/dashboard/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
     Route::patch('/dashboard/{product}', [ProductController::class, 'update'])->name('products.update');
+    Route::patch('/dashboard/{product}/ishide', [ProductController::class, 'updateishide'])->name('products.updateishide');
     Route::delete('/dashboard/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
 });

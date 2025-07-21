@@ -18,7 +18,7 @@ return new class extends Migration
             $table->enum('stock', ['Tersedia', 'Kosong'])->default('Tersedia');
             $table->string('img');
             $table->text('description');
-            $table->boolean('ishide');
+            $table->boolean('ishide')->default(false);
             $table->timestamps();
         });
     }
