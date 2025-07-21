@@ -20,7 +20,7 @@ class UserController extends Controller
     public function register(Request $request) {
         $credentials = $request->validate([
             "name" => "required",
-            "email" => "required|email:dns",
+            "email" => "required|email:dns|unique:users",
             "password" => "required",
         ]);
 
@@ -48,6 +48,10 @@ class UserController extends Controller
 
         if(Auth::attempt($credentials)){
             $req->session()->regenerate();
+
+            if(Auth::user()->is_admin){
+                return redirect('/dashboard');
+            }
 
             return redirect('/');
         }
