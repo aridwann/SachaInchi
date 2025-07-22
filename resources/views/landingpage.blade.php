@@ -15,7 +15,7 @@
         .showOnSlide {
             animation: fade linear;
             animation-timeline: view();
-            animation-range: entry 0% cover 30%;
+            animation-range: entry 0% cover 40%;
             animation-direction: alternate;
         }
     </style>
