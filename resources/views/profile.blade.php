@@ -17,9 +17,10 @@
             <div class="flex p-4 @container">
                 <div class="flex w-full flex-col gap-4 items-center">
                     <div class="flex gap-4 flex-col items-center">
-                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32 relative"
+                        <div id="preview"
+                            class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32 relative"
                             style="
-                      background-image: url('{{ asset($user->avatar ?? 'img/default-avatar.png') }}');
+                      background-image: url('{{ asset($user->avatar ?? 'img/default-avatar.png') }}' );
                     ">
                             <div class="w-full items-end px-4 py-3">
                                 <label
@@ -100,3 +101,12 @@
     </form>
     <x-footer></x-footer>
 </x-layout>
+<script>
+    const avatar = document.getElementById('user_avatar');
+    const preview = document.getElementById('preview');
+
+    avatar.addEventListener('change', function() {
+        const file = this.files[0];
+        preview.style.backgroundImage = `url(${URL.createObjectURL(file)})`;
+    });
+</script>

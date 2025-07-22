@@ -50,7 +50,7 @@
                 style="background-image: url('{{ asset(Auth::user()->avatar ?? 'img/default-avatar.png') }}');">
             </div>
             <div class="bottom-[-80px] absolute right-0 flex flex-col min-w-[200px] gap-2 overflow-hidden rounded p-2 border border-[#A3C299] bg-[#172112] text-white text-sm leading-normal tracking-[0.015em]"
-                x-show="show">
+                x-show="show" @click.outside="show = false" x-transition>
                 <div class="flex gap-1 items-center cursor-pointer hover:underline">
                     <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px"
                         fill=white>
