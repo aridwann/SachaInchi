@@ -1,4 +1,5 @@
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#A3C299] px-10 py-3">
+<header
+    class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#A3C299] px-10 py-3 bg-[#172112] shadow">
     <div class="flex items-center justify-center gap-3 text-white">
         <div class="size-4">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">

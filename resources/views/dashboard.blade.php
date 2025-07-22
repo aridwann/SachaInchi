@@ -1,5 +1,4 @@
 <x-layout>
-    <x-navbar />
     <div class="px-40 flex flex-1 justify-center py-5">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="flex flex-wrap justify-between gap-3 p-4">
@@ -102,13 +101,14 @@
                                             @method('DELETE')
                                             <button class="cursor-pointer">Hapus</button>
                                         </form>
-                                        <form method="post" action="/dashboard/{{ $product->id }}/ishide" class="text-gray-400 ">
+                                        <form method="post" action="/dashboard/{{ $product->id }}/ishide"
+                                            class="text-gray-400 ">
                                             @csrf
                                             @method('PATCH')
                                             @if ($product->ishide)
-                                            <button class="cursor-pointer">Tampilkan</button>
+                                                <button class="cursor-pointer">Tampilkan</button>
                                             @else
-                                            <button class="cursor-pointer">Sembunyikan</button>
+                                                <button class="cursor-pointer">Sembunyikan</button>
                                             @endif
                                         </form>
                                         {{-- @dd($product->ishide) --}}
@@ -181,5 +181,4 @@
             </div>
         </div>
     </div>
-    <x-footer />
 </x-layout>
