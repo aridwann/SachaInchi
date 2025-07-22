@@ -56,9 +56,7 @@ class ProductController extends Controller
         
         if ($request->hasFile('img')) {
             if ($product->img) {
-                // development only!!
                 $newName = Str::after($product->img, 'img/');
-                //--
                 Storage::disk('public')->delete('product-images/'.$newName);
             }
             $validated['img'] = "storage/".$request->file('img')->store('product-images', 'public');
@@ -68,7 +66,8 @@ class ProductController extends Controller
         
         return redirect("/dashboard")->with('success', 'Produk berhasil diperbarui.');
     }
-    public function store(Request $request, Product $product)
+
+    public function store(Request $request)
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
@@ -78,9 +77,10 @@ class ProductController extends Controller
             'img' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:10240'
         ]);
         
-                if ($request->hasFile('img')) {
-                    $validated['img'] = "storage/".$request->file('img')->store('product-images', 'public');
-                }
+        if ($request->hasFile('img')) {
+            $validated['img'] = "storage/".$request->file('img')->store('product-images', 'public');
+        }
+
         Product::create($validated);        
         return redirect("/dashboard")->with('success', 'Produk berhasil ditambahkan.');
     }
@@ -90,14 +90,13 @@ class ProductController extends Controller
         $product->update([
             'ishide' => !$product->ishide
         ]);
-        // dd("dari kontroler");
         
         return redirect("/dashboard")->with('success', 'Status produk berhasil diperbarui.');
     }
 
     public function destroy(Product $product){
         $product->delete();
-        return redirect("dashboard");
+        return redirect("dashboard")->with('success', 'Produk berhasil dihapus.');
     }
 
     public function create()

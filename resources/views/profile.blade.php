@@ -5,7 +5,7 @@
         @method('PATCH')
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             @if (session('success'))
-                <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 2500)" x-show="show"
+                <div x-data="{ show: true }" x-transition.duration.500ms x-init="setTimeout(() => show = false, 2500)" x-show="show"
                     class="bg-green-100 text-green-800 p-3 rounded mb-4 transition">
                     {{ session('success') }}
                 </div>

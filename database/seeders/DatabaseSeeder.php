@@ -40,9 +40,9 @@ class DatabaseSeeder extends Seeder
             'img' => 'img/sacha-inchi-snacks.png'
         ]);
         User::factory()->create([
-            'name' => 'Admin Ganteng',
-            'email' => 'a@gmail.com',
-            'password' => 'a',
+            'name' => 'Admin',
+            'email' => 'superadmin@gmail.com',
+            'password' => 'superadmin',
             'is_admin' => true,  
         ]);
     }
