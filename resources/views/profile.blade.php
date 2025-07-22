@@ -1,5 +1,4 @@
 <x-layout>
-    <x-navbar></x-navbar>
     <form action="/profile/{{ $user->id }}" method="POST" enctype="multipart/form-data"
         class="px-40 flex flex-1 justify-center py-5">
         @csrf
@@ -99,7 +98,6 @@
             </button>
         </div>
     </form>
-    <x-footer></x-footer>
 </x-layout>
 <script>
     const avatar = document.getElementById('user_avatar');

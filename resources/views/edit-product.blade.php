@@ -1,5 +1,4 @@
 <x-layout>
-    <x-navbar />
     <div class="px-40 flex flex-1 justify-center py-5">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
 
@@ -89,7 +88,6 @@
             </form>
         </div>
     </div>
-    <x-footer />
 </x-layout>
 <script>
     const img = document.getElementById('img');

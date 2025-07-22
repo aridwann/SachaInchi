@@ -14,8 +14,14 @@
 <body>
     <div class="relative flex size-full min-h-screen flex-col bg-[#172112] group/design-root overflow-x-hidden"
         style="font-family: Inter, 'Noto Sans', sans-serif">
+        @if (!request()->is('register') && !request()->is('login'))
+            <x-navbar />
+        @endif
         <div class="layout-container flex h-full grow flex-col">
             {{ $slot }}
+            @if (!request()->is('register') && !request()->is('login'))
+                <x-footer />
+            @endif
         </div>
     </div>
 </body>

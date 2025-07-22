@@ -1,6 +1,4 @@
 <x-layout>
-    <x-navbar></x-navbar>
-
     <div class="px-40 flex flex-1 justify-center py-5">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             @if (session('success'))
@@ -16,8 +14,8 @@
             </div>
 
             <div class="flex">
-                <div class="w-1/2 m-4 gap-1 overflow-hidden bg-white @[480px]:gap-2 aspect-[9/10] rounded-xl flex">
-                    <div class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1"
+                <div class="w-100 m-4 gap-1 overflow-hidden bg-white aspect-[9/10] rounded-xl flex">
+                    <div class="w-full bg-center bg-no-repeat aspect-auto bg-cover rounded-none flex-1"
                         style="background-image: url({{ asset($product->img) }});">
                     </div>
                 </div>
@@ -106,6 +104,4 @@
             </div>
         </div>
     </div>
-
-    <x-footer></x-footer>
 </x-layout>

@@ -1,6 +1,4 @@
 <x-layout>
-    <x-navbar />
-
     <div class="flex px-40 justify-center py-5">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <h1 class="text-2xl sm:text-3xl font-bold mb-6 text-white">Keranjang</h1>
@@ -62,7 +60,6 @@
         </div>
     </div>
 
-    <x-footer />
 
     <!-- SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
