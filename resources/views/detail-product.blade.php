@@ -2,7 +2,8 @@
     <div class="px-40 flex flex-1 justify-center py-5">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             @if (session('success'))
-                <div class="bg-green-500 text-white px-4 py-2 rounded-lg mb-4 text-sm">
+                <div x-data="{ show: true }" x-transition.duration.500ms x-init="setTimeout(() => show = false, 2500)" x-show="show"
+                    class="bg-green-100 text-green-800 p-3 mx-4 rounded mb-4 transition">
                     {{ session('success') }}
                 </div>
             @endif
