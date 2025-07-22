@@ -118,7 +118,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="px-4 py-2">
+                <div class="p-4">
                     {{ $products->links() }}
                 </div>
                 <style>
