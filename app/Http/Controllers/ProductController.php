@@ -31,7 +31,7 @@ class ProductController extends Controller
 
     public static function getTop(){
         return view('landingpage', [
-            'products' => Product::take(3)->get()
+            'products' => Product::where('ishide', false)->take(3)->get()
         ]);
     }
 
