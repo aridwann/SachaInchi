@@ -43,7 +43,7 @@
             </div>
 
             <div class="w-full max-w-sm flex justify-between items-center mt-2">
-                <a href="#" class="text-sm text-blue-400 hover:underline">Lupa password?</a>
+                {{-- <a href="#" class="text-sm text-blue-400 hover:underline">Lupa password?</a> --}}
                 <button class="bg-[#54D12B] text-[#172112] text-sm font-bold px-4 py-2 rounded-lg cursor-pointer">
                     Masuk
                 </button>
