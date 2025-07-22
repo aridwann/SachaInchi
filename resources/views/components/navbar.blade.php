@@ -16,17 +16,18 @@
             {{-- Jika admin, tambahkan dashboard link dashboard saja --}}
             @auth
                 @if (Auth::user()->is_admin)
-                    <div class="px-2 py-1 {{ request()->is('dashboard') ? 'bg-[#344a29] rounded-sm' : '' }}">
-                        <a class="text-white text-sm font-medium leading-normal" href="/dashboard">Dashboard</a>
-                    </div>
+                    <a href="/dashboard"
+                        class="px-2 py-1 {{ request()->is('dashboard') ? 'bg-[#344a29] rounded-sm' : '' }}">
+                        <span class="text-white text-sm font-medium leading-normal">Dashboard</span>
+                    </a>
                 @endif
             @endauth
-            <div class="px-2 py-1 {{ request()->is('/') ? 'bg-[#344a29] rounded-sm' : '' }}">
-                <a class="text-white text-sm font-medium leading-normal" href="/">Beranda</a>
-            </div>
-            <div class="px-2 py-1 {{ request()->is('products') ? 'bg-[#344a29] rounded-sm' : '' }}">
-                <a class="text-white text-sm font-medium leading-normal" href="/products">Produk</a>
-            </div>
+            <a href="/" class="px-2 py-1 {{ request()->is('/') ? 'bg-[#344a29] rounded-sm' : '' }}">
+                <span class="text-white text-sm font-medium leading-normal">Beranda</span>
+            </a>
+            <a href="/products" class="px-2 py-1 {{ request()->is('products') ? 'bg-[#344a29] rounded-sm' : '' }}">
+                <span class="text-white text-sm font-medium leading-normal">Produk</span>
+            </a>
 
         </div>
     </div>
@@ -50,18 +51,18 @@
                 @click="show = !show"
                 style="background-image: url('{{ asset(Auth::user()->avatar ?? 'img/default-avatar.png') }}');">
             </div>
-            <div class="bottom-[-80px] absolute right-0 flex flex-col min-w-[200px] gap-2 overflow-hidden rounded p-2 border border-[#A3C299] bg-[#172112] text-white text-sm leading-normal tracking-[0.015em]"
+            <div class="bottom-[-82px] absolute right-0 flex flex-col min-w-[150px] gap-1 overflow-hidden shadow-md shadow-gray-500 rounded p-1 border border-[#A3C299] bg-[#25351e] text-white text-sm leading-normal tracking-[0.015em] font-medium"
                 x-show="show" @click.outside="show = false" x-transition>
-                <div class="flex gap-1 items-center cursor-pointer hover:underline">
+                <a href="/profile" class="flex gap-1 items-center cursor-pointer py-1 px-2 rounded hover:bg-[#3d5531]">
                     <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px"
                         fill=white>
                         <path
                             d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z" />
                     </svg>
-                    <a href="/profile">{{ Auth::user()['name'] }}</a>
-                </div>
+                    <span>{{ Auth::user()['name'] }}</span>
+                </a>
                 <hr>
-                <button class="flex gap-1 items-center cursor-pointer text-start hover:underline">
+                <button class="flex gap-1 items-center cursor-pointer text-start py-1 px-2 rounded hover:bg-[#3d5531]">
                     <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px"
                         fill=white>
                         <path
