@@ -19,29 +19,29 @@
     }
 </style>
 <x-layout>
-    <div class="px-40 flex flex-1 justify-center py-5">
+    <div class="px-8 lg:px-40 flex flex-1 justify-center py-5">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="@container showOnSlide" id="beranda">
                 <div class="@[480px]:p-4">
                     <div data-aos="fade-up" data-aos-duration="1000"
-                        class="flex min-h-[480px] flex-col bg-cover bg-center bg-no-repeat @[480px]:gap-5 @[480px]:rounded-xl justify-center"
+                        class="flex md:min-h-[480px] flex-col bg-cover bg-center bg-no-repeat @[480px]:gap-5 @[480px]:rounded-xl justify-center"
                         style="background-image: linear-gradient(to right,
                         rgba(0, 0, 0, 0.7) 30%,rgba(0, 0, 0, 0.1) 100%
                     ), url('/img/sachainchi.jpeg');">
                         <div data-aos="fade-right" data-aos-duration="1000"
-                            class="w-full ms-10 mt-16 flex flex-col gap-2">
+                            class="w-full ms-5 md:ms-10 mt-16 flex flex-col gap-2">
                             <h1
-                                class="text-white text-3xl font-black leading-tight tracking-[-0.033em] @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                class="text-white lg:text-4xl font-black leading-tight tracking-[-0.033em] text-2xl md:font-black md:leading-tight md:tracking-[-0.033em]">
                                 Nikmati Kelezatan <br /> Sacha Inchi dari Desa Kami
                             </h1>
                             <h2
-                                class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                                class="text-white text-xs font-normal leading-normal md:text-base md:font-normal md:leading-normal">
                                 Produk olahan kacang Sacha Inchi berkualitas tinggi, <br>
                                 langsung dari petani lokal.
                             </h2>
                         </div>
                         <button data-aos="fade-right" data-aos-duration="1000"
-                            class="flex ms-10 min-w-[84px] max-w-[150px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-10 @[480px]:px-4 bg-[#54D12B] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                            class="flex ms-5 md:ms-10 mb-16 md:mb-0 min-w-[50px] max-w-[120px] md:max-w-[150px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-2 md:h-10 md:px-4 bg-[#54D12B] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em] md:text-base md:font-bold md:leading-normal md:tracking-[0.015em]"
                             onclick="location.href = '/products'">
                             <span class="truncate">Lihat Produk</span>
                         </button>
