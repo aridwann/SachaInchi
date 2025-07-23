@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="px-40 flex flex-1 justify-center py-5">
+    <div class="px-8 lg:px-40 flex flex-1 justify-center py-5">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             @if (session('success'))
                 <div x-data="{ show: true }" x-transition.duration.500ms x-init="setTimeout(() => show = false, 2500)" x-show="show"
@@ -8,12 +8,13 @@
                 </div>
             @endif
             <div class="flex flex-wrap justify-between gap-3 p-4">
-                <p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">Kelola Produk</p>
+                <p class="text-white tracking-light text-2xl md:text-[32px] font-bold leading-tight min-w-72">Kelola
+                    Produk</p>
             </div>
-            <div class="px-4 py-3">
+            <div class="px-4 md:py-3">
                 <label class="flex flex-col min-w-40 h-12 w-full">
                     <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
-                        <div class="text-[#a3c398] flex border-none bg-[#2f4328] items-center justify-center pl-4 rounded-l-xl border-r-0"
+                        <div class="text-[#a3c398] flex border-none bg-[#2f4328] items-center justify-center pl-4 rounded-l-xl border-r-0 text-[24px]"
                             data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
                                 viewBox="0 0 256 256">
@@ -25,7 +26,7 @@
                         <div class="flex justify-between w-full gap-4 items-center">
                             <form action="/dashboard" class="w-full">
                                 <input placeholder="Cari Produk"
-                                    class="form-input w-full flex min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#2f4328] focus:border-none h-full placeholder:text-[#a3c398] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                                    class="form-input w-full flex min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#2f4328] focus:border-none h-full placeholder:text-[#a3c398] px-4 rounded-l-none border-l-0 pl-2 text-sm md:text-base font-normal leading-normal"
                                     name="query" autofocus />
                             </form>
                             <button
@@ -43,7 +44,7 @@
                         <thead>
                             <tr class="bg-[#21301c]">
                                 <th
-                                    class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-120 px-4 py-3 text-left text-white  text-sm font-medium leading-normal">
+                                    class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-120 px-4 py-3 text-left text-white text-sm font-medium leading-normal">
                                     #</th>
                                 <th
                                     class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-176 px-4 py-3 text-left text-white w-14 text-sm font-medium leading-normal">
@@ -52,7 +53,7 @@
                                     class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-296 px-4 py-3 text-left text-white w-[400px] text-sm font-medium leading-normal">
                                     Nama Produk</th>
                                 <th
-                                    class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-416 px-4 py-3 text-left text-white w-60 text-sm font-medium leading-normal">
+                                    class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-536 px-4 py-3 text-left text-white w-60 text-sm font-medium leading-normal">
                                     Stok</th>
                                 <th
                                     class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-536 px-4 py-3 text-left text-white w-[400px] text-sm font-medium leading-normal">
@@ -61,8 +62,7 @@
                                     class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-656 px-4 py-3 text-left text-white w-[400px] text-sm font-medium leading-normal">
                                     Deskripsi Produk
                                 </th>
-                                <th
-                                    class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-776 px-4 py-3 text-left text-white w-60 text-sm font-medium leading-normal">
+                                <th class="px-4 py-3 text-left text-white w-60 text-sm font-medium leading-normal">
                                     Aksi
                                 </th>
                             </tr>
@@ -83,7 +83,7 @@
                                         class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-296 h-[72px] px-4 py-2 w-[400px] text-white text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
                                         {{ $product->name }}</td>
                                     <td
-                                        class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-416 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
+                                        class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-536 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
                                         <button
                                             class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#2f4328] text-white text-sm font-medium leading-normal w-full">
                                             <span class="truncate">{{ $product->stock }}</span>
@@ -98,7 +98,7 @@
                                         {{ Str::limit($product->description, 30) }}
                                     </td>
                                     <td
-                                        class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-776 h-[72px] px-4 py-2 w-60 text-[#a3c398] text-sm font-bold leading-normal tracking-[0.015em]">
+                                        class="h-[72px] px-4 py-2 w-60 text-[#a3c398] text-sm font-bold leading-normal tracking-[0.015em]">
                                         <a href="/dashboard/{{ $product->id }}/edit"
                                             class="text-green-500 me-1">Edit</a> |
                                         <form action="/dashboard/{{ $product->id }}" method="post"
