@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="px-40 flex flex-1 justify-center py-5">
+    <div class="px-8 lg:px-40 flex flex-1 justify-center py-5">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <form method="GET" action="" class="px-4 py-3">
                 <label class="flex flex-col min-w-40 h-12 w-full">

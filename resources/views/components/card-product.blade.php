@@ -6,13 +6,13 @@
         style="background-image: url({{ asset($product->img) }});">
     </div>
     <div>
-        <p class="text-white text-base font-medium leading-normal">
+        <p class="text-white text-sm md:text-base font-medium leading-normal">
             {{ $product['name'] }}
         </p>
-        <p class="text-[#A3C299] text-sm font-normal leading-normal">
+        <p class="text-[#A3C299] text-xs md:text-sm font-normal leading-normal">
             Stok: {{ $product->stock }}
         </p>
-        <p class="text-[#54D12B] text-base font-bold leading-normal my-2">
+        <p class="text-[#54D12B] text-sm md:text-base font-bold leading-normal my-2">
             Rp. @convert($product['price'])
         </p>
     </div>
