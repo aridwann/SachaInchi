@@ -65,7 +65,7 @@
                 <span class="text-sm font-medium leading-normal">Keranjang</span>
             </a>
             <a href="/profile"
-                class="flex items-center gap-1 px-4 py-1 mb-2 rounded hover:bg-[#3d5531] {{ request()->is('profile') ? 'bg-[#344a29]' : '' }}">
+                class="flex items-center gap-2 px-4 py-1 mb-2 rounded hover:bg-[#3d5531] {{ request()->is('profile') ? 'bg-[#344a29]' : '' }}">
                 <div class="select-none bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 cursor-pointer"
                     style="background-image: url('{{ asset(Auth::user()->avatar ?? 'img/default-avatar.png') }}');">
                 </div>
