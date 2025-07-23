@@ -1,14 +1,14 @@
 <x-layout>
     <div class="flex px-8 lg:px-40 justify-center py-5">
-        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+        <div class="layout-content-container flex flex-col min-w-[400px] px-4 md:px-0 max-w-[960px] flex-1">
             <h1 class="text-2xl sm:text-3xl font-bold mb-6 text-white">Keranjang</h1>
 
             <div class="overflow-x-auto border border-[#A3C299] rounded-xl md:block">
-                <table class="min-w-full text-sm text-[#A3C299]">
+                <table class="min-w-full text-xs text-[#A3C299]">
                     <thead class="bg-[#172112]">
                         <tr>
                             <th class="text-left p-3">Produk</th>
-                            <th class="text-left p-3">Harga</th>
+                            <th class="text-left p-3 hidden md:block">Harga</th>
                             <th class="text-left p-3">Qty</th>
                             <th class="text-left p-3">Total</th>
                             <th class="text-center p-3">Hapus Produk</th>
@@ -21,11 +21,11 @@
                                 <td class="p-3 flex items-center gap-3">
                                     <input type="checkbox" class="w-4 h-4 cursor-pointer checkbox-item"
                                         data-id="{{ $productId }}" />
-                                    <div class="w-20 h-20 bg-cover bg-center rounded-lg"
+                                    <div class="hidden md:block w-20 h-20 bg-cover bg-center rounded-lg"
                                         style="background-image: url('{{ $item['img'] }}');"></div>
                                     {{ $item['name'] }}
                                 </td>
-                                <td class="p-3">Rp @convert($item['price'])</td>
+                                <td class="hidden md:table-cell p-3">Rp @convert($item['price'])</td>
                                 <td class="p-3">
                                     <div class="flex items-center gap-2">
                                         <button onclick="updateQty('{{ $productId }}', -1)"

@@ -1,6 +1,6 @@
 <x-layout>
     <div class="px-8 lg:px-40 flex flex-1 justify-center py-5">
-        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+        <div class="layout-content-container flex flex-col min-w-[390px] max-w-[960px] flex-1">
             @if (session('success'))
                 <div x-data="{ show: true }" x-transition.duration.500ms x-init="setTimeout(() => show = false, 2500)" x-show="show"
                     class="bg-green-100 text-green-800 p-3 mx-4 rounded mb-4 transition">
@@ -26,7 +26,7 @@
                         {{ $product['name'] }}
                     </h1>
                     <h3
-                        class="text-[#54D12B] min-w-[350px] bg-[#273620] text-3xl font-bold leading-tight tracking-[-0.015em] ms-4 px-6 py-4">
+                        class="text-[#54D12B] min-w-[350px] bg-[#273620] text-3xl font-bold leading-tight tracking-[-0.015em] mx-4 px-6 py-4">
                         Rp @convert($product['price'])
                     </h3>
 
@@ -39,7 +39,7 @@
                         <input type="number" name="quantity" id="quantityInput" value="1" min="1" hidden>
 
                         <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4 m-5">
-                            <dt class="font-medium text-[#A3C299]">Stok</dt>
+                            <dt class="font-medium text-white">Stok</dt>
                             <dd class="text-[#A3C299]">
                                 <div class="flex items-center rounded  w-30">
                                     {{ $product->stock }}
@@ -48,7 +48,7 @@
                         </div>
                         @if ($product->stock == 'Tersedia')
                             <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4 m-5">
-                                <dt class="font-medium text-[#A3C299]">Jumlah</dt>
+                                <dt class="font-medium text-white">Jumlah</dt>
                                 <dd class="text-[#A3C299]">
                                     <div class="flex items-center rounded border border-[#A3C299] w-30">
                                         <button type="button" id="kurangBtn"

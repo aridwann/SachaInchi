@@ -1,6 +1,6 @@
 <x-layout>
     <div class="px-40 flex flex-1 justify-center py-5">
-        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+        <div class="layout-content-container flex flex-col min-w-[390px] max-w-[960px] flex-1">
 
             <div class="flex flex-wrap gap-2 p-4">
                 <span class="text-white text-xl font-bold leading-normal">Edit Produk: {{ $product->name }}</span>
@@ -16,7 +16,7 @@
                         <img src="{{ asset($product->img) }}" alt="{{ $product->name }}" id="preview"
                             class="rounded-xl mb-4 w-100 object-cover aspect-[9/10]">
                         <input accept="image/png,image/jpg,image/jpeg" type="file" name="img" id="img"
-                            class="block w-100 rounded-lg border border-[#4abd21] text-sm text-[#A3C299] file:mr-4 file:py-2 file:px-4 file:rounded-s-lg file:border-0 file:text-sm file:font-semibold file:bg-[#54D12B] file:text-[#172112] hover:file:bg-[#4abd21]">
+                            class="block w-full md:w-100 rounded-lg border border-[#4abd21] text-sm text-[#A3C299] file:mr-4 file:py-2 file:px-4 file:rounded-s-lg file:border-0 file:text-sm file:font-semibold file:bg-[#54D12B] file:text-[#172112] hover:file:bg-[#4abd21]">
                         @error('img')
                             <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                         @enderror

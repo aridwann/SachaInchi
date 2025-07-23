@@ -30,7 +30,7 @@
                                     name="query" autofocus />
                             </form>
                             <button
-                                class="flex min-w-fit max-w-[150px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-10 @[480px]:px-4 bg-[#54D12B] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                                class="flex min-w-fit max-w-[150px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-10 @[480px]:px-4 bg-[#54D12B] text-[#172112] text-xs md:text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
                                 onclick="location.href = '/dashboard/create'">
                                 <span class="truncate">Tambah Produk</span>
                             </button>
@@ -47,10 +47,10 @@
                                     class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-120 px-4 py-3 text-left text-white text-sm font-medium leading-normal">
                                     #</th>
                                 <th
-                                    class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-176 px-4 py-3 text-left text-white w-14 text-sm font-medium leading-normal">
+                                    class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-296 px-4 py-3 text-left text-white w-14 text-sm font-medium leading-normal">
                                     Preview</th>
                                 <th
-                                    class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-296 px-4 py-3 text-left text-white w-[400px] text-sm font-medium leading-normal">
+                                    class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-176 px-4 py-3 text-left text-white w-[400px] text-sm font-medium leading-normal">
                                     Nama Produk</th>
                                 <th
                                     class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-536 px-4 py-3 text-left text-white w-60 text-sm font-medium leading-normal">
@@ -74,13 +74,13 @@
                                         class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-120 h-[72px] px-4 py-2 text-[#a3c398] text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
                                         {{ $loop->iteration }}</td>
                                     <td
-                                        class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-176 h-[72px] px-4 py-2 w-14 text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
+                                        class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-296 h-[72px] px-4 py-2 w-14 text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
                                         <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg w-10"
                                             style='background-image: url("{{ $product->img }}");'></div>
                                     </td>
                                     {{-- @dd($product->img) --}}
                                     <td
-                                        class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-296 h-[72px] px-4 py-2 w-[400px] text-white text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
+                                        class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-176 h-[72px] px-4 py-2 w-[400px] text-white text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
                                         {{ $product->name }}</td>
                                     <td
                                         class="table-480a6191-e45f-4b9a-85c9-0caed492694b-column-536 h-[72px] px-4 py-2 w-60 text-sm font-normal leading-normal {{ $product->ishide ? 'grayscale' : '' }}">
