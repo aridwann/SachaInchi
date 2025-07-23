@@ -26,7 +26,7 @@
                         {{ $product['name'] }}
                     </h1>
                     <h3
-                        class="text-[#54D12B] bg-[#273620] text-3xl font-bold leading-tight tracking-[-0.015em] ms-4 px-6 py-4">
+                        class="text-[#54D12B] min-w-[350px] bg-[#273620] text-3xl font-bold leading-tight tracking-[-0.015em] ms-4 px-6 py-4">
                         Rp @convert($product['price'])
                     </h3>
 
@@ -46,57 +46,36 @@
                                 </div>
                             </dd>
                         </div>
-                        <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4 m-5">
-                            <dt class="font-medium text-[#A3C299]">Jumlah</dt>
-                            <dd class="text-[#A3C299] sm:col-span-2">
-                                <div class="flex items-center rounded border border-[#A3C299] w-30">
-                                    <button type="button" id="kurangBtn"
-                                        class="size-10 leading-10 text-[#A3C299] transition hover:opacity-75 ">&minus;</button>
-                                    <input type="number" id="Quantity" value="1" min="1"
-                                        class="h-10 w-10 text-center sm:text-sm" readonly />
-                                    <button type="button" id="tambahBtn"
-                                        class="size-10 leading-10 text-[#A3C299] transition hover:opacity-75">&plus;</button>
-                                </div>
-                            </dd>
-                        </div>
-
-                        <div class="flex justify-stretch">
-                            <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-start">
-                                <button type="submit"
-                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#f5f2f0] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em]">
-                                    <span class="truncate">Tambah ke Keranjang</span>
-                                </button>
-                                <a href="https://wa.me/6288218636562"
-                                    class="flex min-w-[84px] max-w-[480px] items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#54D12B] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em]">
-                                    <span class="truncate">Pesan via WhatsApp</span>
-                                </a>
+                        @if ($product->stock == 'Tersedia')
+                            <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4 m-5">
+                                <dt class="font-medium text-[#A3C299]">Jumlah</dt>
+                                <dd class="text-[#A3C299] sm:col-span-2">
+                                    <div class="flex items-center rounded border border-[#A3C299] w-30">
+                                        <button type="button" id="kurangBtn"
+                                            class="size-10 leading-10 text-[#A3C299] transition hover:opacity-75 ">&minus;</button>
+                                        <input type="number" id="Quantity" value="1" min="1"
+                                            class="h-10 w-10 text-center sm:text-sm" readonly />
+                                        <button type="button" id="tambahBtn"
+                                            class="size-10 leading-10 text-[#A3C299] transition hover:opacity-75">&plus;</button>
+                                    </div>
+                                </dd>
                             </div>
-                        </div>
+                            <div class="flex justify-stretch">
+                                <div class="flex flex-1 gap-3 flex-wrap px-4 py-3 justify-start">
+                                    <button type="submit"
+                                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#f5f2f0] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em]">
+                                        <span class="truncate">Tambah ke Keranjang</span>
+                                    </button>
+                                    <p onclick="prosesPesanan({{ Auth::user() }}, {{ $product }})"
+                                        class="cursor-pointer flex min-w-[84px] max-w-[480px] items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#54D12B] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em]">
+                                        <span class="truncate">Pesan via WhatsApp</span>
+                                    </p>
+                                </div>
+                            </div>
+                        @endif
                     </form>
-
-                    <script>
-                        const kurangBtn = document.getElementById('kurangBtn');
-                        const tambahBtn = document.getElementById('tambahBtn');
-                        const qtyInput = document.getElementById('Quantity');
-                        const hiddenQty = document.getElementById('quantityInput');
-
-                        kurangBtn.addEventListener('click', () => {
-                            let value = parseInt(qtyInput.value);
-                            if (value > 1) {
-                                qtyInput.value = value - 1;
-                                hiddenQty.value = value - 1;
-                            }
-                        });
-
-                        tambahBtn.addEventListener('click', () => {
-                            let value = parseInt(qtyInput.value);
-                            qtyInput.value = value + 1;
-                            hiddenQty.value = value + 1;
-                        });
-                    </script>
                 </div>
             </div>
-
             <div>
                 <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Deskripsi</h3>
                 <p class="text-[#A3C299] text-base font-normal leading-normal pb-3 pt-1 px-4 text-justify">
@@ -106,3 +85,38 @@
         </div>
     </div>
 </x-layout>
+<script>
+    const kurangBtn = document.getElementById('kurangBtn');
+    const tambahBtn = document.getElementById('tambahBtn');
+    const qtyInput = document.getElementById('Quantity');
+    const hiddenQty = document.getElementById('quantityInput');
+
+    kurangBtn.addEventListener('click', () => {
+        let value = parseInt(qtyInput.value);
+        if (value > 1) {
+            qtyInput.value = value - 1;
+            hiddenQty.value = value - 1;
+        }
+    });
+
+    tambahBtn.addEventListener('click', () => {
+        let value = parseInt(qtyInput.value);
+        qtyInput.value = value + 1;
+        hiddenQty.value = value + 1;
+    });
+
+    function formatRupiah(angka) {
+        return angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    function prosesPesanan(user, product) {
+        const qty = hiddenQty.value
+        const total = qty * product.price
+        let pesan =
+            `*Nama:* ${user.name} \n*No. HP:* ${user.phone}\n*Alamat:* ${user.address}\n*Pesanan:*\n -> ${product.name} x${qty} (Rp ${formatRupiah(total)})\n\n*Total: Rp ${formatRupiah(total)}*`;
+        const encodedMessage = encodeURIComponent(pesan);
+        const waURL = `https://wa.me/6281563229577?text=${encodedMessage}`;
+
+        window.open(waURL, '_blank');
+    }
+</script>

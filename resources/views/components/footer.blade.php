@@ -2,7 +2,7 @@
     <div class="flex max-w-[960px] flex-1 flex-col">
         <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#">
+                <a href="https://wa.me/6281563229577" target="_blank">
                     <div class="text-[#A3C299]" data-icon="WhatsappLogo" data-size="24px" data-weight="regular">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
                             viewBox="0 0 256 256">
@@ -12,7 +12,7 @@
                         </svg>
                     </div>
                 </a>
-                <a href="#">
+                <a href="https://www.instagram.com/">
                     <div class="text-[#A3C299]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
                             viewBox="0 0 256 256">
@@ -22,7 +22,7 @@
                         </svg>
                     </div>
                 </a>
-                <a href="#">
+                <a href="https://www.facebook.com/">
                     <div class="text-[#A3C299]" data-icon="FacebookLogo" data-size="24px" data-weight="regular">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
                             viewBox="0 0 256 256">
@@ -32,7 +32,7 @@
                         </svg>
                     </div>
                 </a>
-                <a href="#">
+                <a href="https://x.com/">
                     <div class="text-[#A3C299]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
                             viewBox="0 0 256 256">

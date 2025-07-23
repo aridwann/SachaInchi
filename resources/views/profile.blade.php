@@ -92,10 +92,16 @@
                 </label>
             </div>
 
-            <button type="submit"
-                class="cursor-pointer max-w-max flex-grow-0 rounded-lg h-10 px-4 bg-[#54D12B] text-[#172112] text-sm font-bold mx-4 my-3">
-                Simpan Perubahan
-            </button>
+            <div class="flex mx-4 my-3 gap-4">
+                <button type="submit"
+                    class="cursor-pointer max-w-max flex-grow-0 rounded-lg h-10 px-4 bg-[#54D12B] text-[#172112] text-sm font-bold">
+                    Simpan Perubahan
+                </button>
+                <a href="/profile"
+                    class="flex items-center cursor-pointer max-w-max flex-grow-0 rounded-lg h-10 px-4 bg-red-600 text-white text-sm font-bold">
+                    Batalkan Perubahan
+                </a>
+            </div>
         </div>
     </form>
 </x-layout>

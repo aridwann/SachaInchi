@@ -61,7 +61,6 @@
     </div>
 
 
-    <!-- SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
@@ -178,7 +177,7 @@
 
             pesan += `\n*Total: Rp ${formatRupiah(total)}*`;
             const encodedMessage = encodeURIComponent(pesan);
-            const waURL = `https://wa.me/6288218636562?text=${encodedMessage}`;
+            const waURL = `https://wa.me/6281563229577?text=${encodedMessage}`;
 
             window.open(waURL, '_blank');
 
