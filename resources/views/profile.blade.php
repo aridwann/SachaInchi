@@ -1,6 +1,6 @@
 <x-layout>
     <form action="/profile/{{ $user->id }}" method="POST" enctype="multipart/form-data"
-        class="px-40 flex flex-1 justify-center py-5">
+        class="px-8 lg:px-40 flex flex-1 justify-center py-5">
         @csrf
         @method('PATCH')
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">

@@ -1,7 +1,7 @@
 <x-layout>
     <div class="flex flex-col md:flex-row min-h-screen font-sans">
         <!-- Background / Nav Section -->
-        <section class="w-full md:w-3/5 h-64 md:h-auto flex flex-col justify-center items-end bg-cover bg-left md:pb-10"
+        <section class="w-full md:w-3/5 h-1/2 md:h-auto flex flex-col justify-center items-end bg-cover bg-left md:pb-10"
             style="
         background-image: linear-gradient(to left,
             rgba(0, 0, 0, 0.5),

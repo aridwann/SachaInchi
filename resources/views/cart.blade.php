@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="flex px-40 justify-center py-5">
+    <div class="flex px-8 lg:px-40 justify-center py-5">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <h1 class="text-2xl sm:text-3xl font-bold mb-6 text-white">Keranjang</h1>
 

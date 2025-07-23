@@ -38,7 +38,7 @@
         </form>
 
         <!-- Nav / Background Section -->
-        <section class="w-full md:w-3/5 h-64 md:h-auto flex flex-col justify-center bg-cover bg-right md:pb-10"
+        <section class="w-full md:w-3/5 h-full md:h-auto flex flex-col justify-center bg-cover bg-right md:pb-10"
             style="
         background-image: linear-gradient(to right,
             rgba(0, 0, 0, 0.5),
