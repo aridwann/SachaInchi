@@ -1,5 +1,6 @@
 <header
-    class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#A3C299] px-10 py-3 bg-[#172112] shadow">
+    class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#A3C299] px-10 py-3 bg-[#172112] shadow"
+    x-data="{ showNav: false }">
     <div class="flex items-center justify-center gap-3 text-white">
         <div class="size-4">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -11,7 +12,7 @@
         <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">
             SachaInchi
         </h2>
-        <div class="flex flex-1 ms-3 justify-center items-center gap-4">
+        <div class="hidden md:flex flex-1 ms-3 justify-center items-center gap-4">
             <span class="text-white">|</span>
             {{-- Jika admin, tambahkan dashboard link dashboard saja --}}
             @auth
@@ -33,7 +34,53 @@
     </div>
     {{-- Jika sudah login, tampilkan profil user --}}
     @auth
-        <form action="/logout" method="POST" class="flex gap-4 items-center relative" x-data="{ show: false }">
+        {{-- Mobile Ver --}}
+        <div class="flex items-center justify-center md:hidden select-none size-10 cursor-pointer rounded hover:bg-[#3d5531]"
+            @click="showNav = !showNav">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+            </svg>
+        </div>
+        <form action="/logout" method="POST"
+            class="md:hidden py-2 px-2 flex flex-col w-full rounded-b-lg border-b-1 text-white border-white absolute -bottom-[350px] left-0 gap-1 bg-[#172112]"
+            x-show="showNav" @click.outside="showNav = false" x-transition>
+            @csrf
+            @auth
+                @if (Auth::user()->is_admin)
+                    <a href="/dashboard"
+                        class="px-8 py-4 rounded hover:bg-[#3d5531] {{ request()->is('dashboard') ? 'bg-[#344a29]' : '' }}">
+                        <span class="text-sm font-medium leading-normal">Dashboard</span>
+                    </a>
+                @endif
+            @endauth
+            <a href="/" class="px-8 py-4 rounded hover:bg-[#3d5531] {{ request()->is('/') ? 'bg-[#344a29]' : '' }}">
+                <span class="text-sm font-medium leading-normal">Beranda</span>
+            </a>
+            <a href="/products"
+                class="px-8 py-4 rounded hover:bg-[#3d5531] {{ request()->is('products') ? 'bg-[#344a29]' : '' }}">
+                <span class="text-sm font-medium leading-normal">Produk</span>
+            </a>
+            <a href="/cart"
+                class="px-8 py-4 rounded hover:bg-[#3d5531] {{ request()->is('cart') ? 'bg-[#344a29]' : '' }}">
+                <span class="text-sm font-medium leading-normal">Keranjang</span>
+            </a>
+            <a href="/profile"
+                class="flex items-center gap-1 px-8 py-1 mb-2 rounded hover:bg-[#3d5531] {{ request()->is('profile') ? 'bg-[#344a29]' : '' }}">
+                <div class="select-none bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 cursor-pointer"
+                    style="background-image: url('{{ asset(Auth::user()->avatar ?? 'img/default-avatar.png') }}');">
+                </div>
+                <span class="text-sm font-medium leading-normal">{{ Auth::user()->name }}</span>
+            </a>
+            <hr>
+            <button class="flex gap-1 w-full items-center cursor-pointer py-4 px-8 rounded hover:bg-[#3d5531] text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill=white>
+                    <path
+                        d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+                </svg>
+                <span class="text-sm font-medium leading-normal">Logout</span>
+            </button>
+        </form>
+        <form action="/logout" method="POST" class="hidden md:flex gap-4 items-center relative" x-data="{ show: false }">
             @csrf
             <a href="/cart"
                 class="flex gap-1 h-7 min-w-[54px] max-w-[480px] font-medium cursor-pointer items-center justify-center overflow-hidden px-2 text-white text-sm leading-normal tracking-[0.015em]  {{ request()->is('cart') ? 'bg-[#344a29] rounded-sm' : '' }}">
