@@ -42,7 +42,7 @@
             </svg>
         </div>
         <form action="/logout" method="POST"
-            class="md:hidden py-2 px-2 flex flex-col w-full rounded-b-lg border-b-1 text-white border-white absolute -bottom-[350px] left-0 gap-1 bg-[#172112]"
+            class="md:hidden py-2 px-2 flex flex-col w-full rounded-b-lg border-b-1 text-white border-white absolute left-0 gap-1 bg-[#172112] {{ Auth::user()->is_admin ? '-bottom-[350px]' : '-bottom-[300px]' }}"
             x-show="showNav" @click.outside="showNav = false" x-transition>
             @csrf
             @auth

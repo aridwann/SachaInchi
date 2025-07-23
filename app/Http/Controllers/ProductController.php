@@ -55,11 +55,10 @@ class ProductController extends Controller
         ]);
         
         if ($request->hasFile('img')) {
-            if ($product->img) {
-                $newName = Str::after($product->img, 'img/');
-                Storage::disk('public')->delete('product-images/'.$newName);
+            if (!str_contains($product->img, 'img/')) {
+                Storage::disk('public')->delete(str_replace('storage/', '', $product->img));
             }
-            $validated['img'] = "storage/".$request->file('img')->store('product-images', 'public');
+            $validated['img'] = $request->file('img')->store('product-images', 'public');
         }
     
         $product->update($validated);
@@ -78,7 +77,7 @@ class ProductController extends Controller
         ]);
         
         if ($request->hasFile('img')) {
-            $validated['img'] = "storage/".$request->file('img')->store('product-images', 'public');
+            $validated['img'] = $request->file('img')->store('product-images', 'public');
         }
 
         Product::create($validated);        
@@ -95,6 +94,9 @@ class ProductController extends Controller
     }
 
     public function destroy(Product $product){
+        if (!str_contains($product->img, 'img/')) {
+            Storage::disk('public')->delete(str_replace('storage/', '', $product->img));
+        }
         $product->delete();
         return redirect("dashboard")->with('success', 'Produk berhasil dihapus.');
     }

@@ -59,7 +59,7 @@
                     </p>
                     <input
                         class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#A3C299] bg-[#202d19] focus:border-[#A3C299] h-14 placeholder:text-[#A3C299] p-[15px] text-base font-normal leading-normal"
-                        value="{{ $user->name }}" name="name" />
+                        value="{{ $user->name }}" name="name" id="name" />
                     @error('name')
                         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                     @enderror
@@ -72,7 +72,7 @@
                     </p>
                     <input
                         class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#A3C299] bg-[#202d19] focus:border-[#A3C299] h-14 placeholder:text-[#A3C299] p-[15px] text-base font-normal leading-normal"
-                        value="{{ $user->phone }}" name="phone" />
+                        value="{{ $user->phone }}" name="phone" id="phone" type="number" />
                     @error('phone')
                         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                     @enderror
@@ -85,14 +85,14 @@
                     </p>
                     <textarea
                         class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-[#A3C299] bg-[#202d19] focus:border-[#A3C299] h-14 placeholder:text-[#A3C299] p-[15px] text-base font-normal leading-normal"
-                        name="address">{{ $user->address }}</textarea>
+                        id="address" name="address">{{ $user->address }}</textarea>
                     @error('address')
                         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                     @enderror
                 </label>
             </div>
 
-            <div class="flex mx-4 my-3 gap-4">
+            <div class="hidden mx-4 my-3 gap-4" id="buttons">
                 <button type="submit"
                     class="cursor-pointer max-w-max flex-grow-0 rounded-lg h-10 px-4 bg-[#54D12B] text-[#172112] text-sm font-bold">
                     Simpan Perubahan
@@ -107,10 +107,21 @@
 </x-layout>
 <script>
     const avatar = document.getElementById('user_avatar');
+    const buttons = document.getElementById('buttons');
+    const inputs = document.querySelectorAll('#name, #phone, #address');
     const preview = document.getElementById('preview');
 
     avatar.addEventListener('change', function() {
         const file = this.files[0];
         preview.style.backgroundImage = `url(${URL.createObjectURL(file)})`;
+        buttons.classList.remove('hidden');
+        buttons.classList.add('flex');
+    });
+
+    inputs.forEach(input => {
+        input.addEventListener('input', () => {
+            buttons.classList.remove('hidden');
+            buttons.classList.add('flex');
+        });
     });
 </script>

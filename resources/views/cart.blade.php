@@ -144,6 +144,19 @@
         });
 
         function prosesPesanan(user) {
+            if (!user.phone && !user.address) {
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Lengkapi Profil',
+                    text: 'Silakan lengkapi terlebih dahulu data anda.',
+                    confirmButtonColor: '#54D12B'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.open('/profile', '_self');
+                    }
+                });
+                return
+            }
             const checkboxes = document.querySelectorAll('.checkbox-item');
             let total = 0;
             let pesan =
