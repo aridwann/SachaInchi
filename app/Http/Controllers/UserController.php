@@ -72,7 +72,7 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'phone' => 'required|numeric',
             'address' => 'required|string',
-            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:10240'
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:1024'
         ]);
         
         if ($request->hasFile('avatar')) {
