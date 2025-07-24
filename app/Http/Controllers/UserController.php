@@ -77,9 +77,9 @@ class UserController extends Controller
         
         if ($request->hasFile('avatar')) {
             if ($user->avatar) {
-                Storage::disk('public')->delete(str_replace('storage/', '', $user->avatar));
+                Storage::disk(config('filesystems.default_public_disk'))->delete(str_replace('storage/', '', $user->avatar));
             }
-            $validated['avatar'] = $request->file('avatar')->store('user-images', 'public');
+            $validated['avatar'] = $request->file('avatar')->store('user-images', config('filesystems.default_public_disk'));
         }
         $user->update($validated);
         
