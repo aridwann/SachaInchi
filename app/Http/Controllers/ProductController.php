@@ -58,7 +58,7 @@ class ProductController extends Controller
             if (!str_contains($product->img, 'img/')) {
                 Storage::disk(config('filesystems.default_public_disk'))->delete(str_replace('storage/', '', $product->img));
             }
-            $validated['img'] = $request->file('img')->store('product-images', config('filesystems.default_public_disk'));
+            $validated['img'] = 'storage/'.$request->file('img')->store('product-images', config('filesystems.default_public_disk'));
         }
     
         $product->update($validated);
@@ -77,7 +77,7 @@ class ProductController extends Controller
         ]);
         
         if ($request->hasFile('img')) {
-            $validated['img'] = $request->file('img')->store('product-images', config('filesystems.default_public_disk'));
+            $validated['img'] = 'storage/'.$request->file('img')->store('product-images', config('filesystems.default_public_disk'));
         }
 
         Product::create($validated);        
