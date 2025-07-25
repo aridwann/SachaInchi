@@ -1,6 +1,6 @@
 <x-layout>
-    <div class="flex px-8 lg:px-40 justify-center py-5">
-        <div class="layout-content-container flex flex-col min-w-[400px] px-4 md:px-0 max-w-[960px] flex-1">
+    <div class="flex px-3 lg:px-40 justify-center py-5">
+        <div class="layout-content-container flex flex-col px-4 md:px-0 max-w-[960px] flex-1">
             <h1 class="text-2xl sm:text-3xl font-bold mb-6 text-white">Keranjang</h1>
 
             <div class="overflow-x-auto border border-[#A3C299] rounded-xl md:block">

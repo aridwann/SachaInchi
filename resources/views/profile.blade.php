@@ -1,9 +1,9 @@
 <x-layout>
     <form action="/profile/{{ $user->id }}" method="POST" enctype="multipart/form-data"
-        class="px-8 lg:px-40 flex flex-1 justify-center py-5">
+        class="px-3 lg:px-40 flex flex-1 justify-center py-5">
         @csrf
         @method('PATCH')
-        <div class="layout-content-container flex flex-col  min-w-[390px] max-w-[960px] flex-1">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             @if (session('success'))
                 <div x-data="{ show: true }" x-transition.duration.500ms x-init="setTimeout(() => show = false, 2500)" x-show="show"
                     class="bg-green-100 text-green-800 p-3 rounded mb-4 transition">

@@ -1,6 +1,6 @@
 <x-layout>
-    <div class="flex justify-center flex-1 px-8 py-5 lg:px-40">
-        <div class="layout-content-container min-w-[390px] flex flex-col max-w-[960px] flex-1">
+    <div class="flex justify-center flex-1 px-3 py-5 lg:px-40">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="@container " id="beranda">
                 <div class="md:p-4">
                     <div class="flex min-h-[480px] flex-col bg-cover bg-left md:bg-center bg-no-repeat md:gap-5 md:rounded-xl justify-center mx-4 md:mx-0"

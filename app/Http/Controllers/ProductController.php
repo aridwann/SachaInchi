@@ -51,7 +51,7 @@ class ProductController extends Controller
             'price' => 'required|numeric|min:0',
             'description' => 'nullable|string',
             'stock' => 'required|in:Tersedia,Kosong', 
-            'img' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:1024'
+            'img' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120'
         ]);
         
         if ($request->hasFile('img')) {
@@ -73,7 +73,7 @@ class ProductController extends Controller
             'price' => 'required|numeric|min:0',
             'description' => 'nullable|string',
             'stock' => 'required|in:Tersedia,Kosong', 
-            'img' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:10240'
+            'img' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:5120'
         ]);
         
         if ($request->hasFile('img')) {

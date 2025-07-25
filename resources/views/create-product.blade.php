@@ -1,6 +1,6 @@
 <x-layout>
-    <div class="px-40 flex flex-1 justify-center py-5">
-        <div class="layout-content-container flex flex-col min-w-[400px] max-w-[960px] flex-1">
+    <div class="px-3 lg:px-40 flex flex-1 justify-center py-5">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
 
             <div class="flex flex-wrap gap-2 p-4">
                 <span class="text-white text-xl font-bold leading-normal">Tambah Produk</span>
