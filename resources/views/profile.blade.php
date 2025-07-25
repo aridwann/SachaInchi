@@ -1,6 +1,6 @@
 <x-layout>
     <form action="/profile/{{ $user->id }}" method="POST" enctype="multipart/form-data"
-        class="px-3 lg:px-40 flex flex-1 justify-center py-5">
+        class="px-1 lg:px-40 flex flex-1 justify-center py-5">
         @csrf
         @method('PATCH')
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
@@ -92,13 +92,13 @@
                 </label>
             </div>
 
-            <div class="hidden mx-4 my-3 gap-4" id="buttons">
+            <div class="hidden flex-col md:flex-row mx-4 my-3 gap-4" id="buttons">
                 <button type="submit"
-                    class="cursor-pointer max-w-max flex-grow-0 rounded-lg h-10 px-4 bg-[#54D12B] text-[#172112] text-sm font-bold">
+                    class="cursor-pointer md:max-w-max md:flex-grow-0 rounded-lg h-10 px-4 bg-[#54D12B] text-[#172112] text-sm font-bold">
                     Simpan Perubahan
                 </button>
                 <a href="/profile"
-                    class="flex items-center cursor-pointer max-w-max flex-grow-0 rounded-lg h-10 px-4 bg-red-600 text-white text-sm font-bold">
+                    class="flex items-center justify-center cursor-pointer md:max-w-max md:flex-grow-0 rounded-lg h-10 px-4 bg-red-600 text-white text-sm font-bold">
                     Batalkan Perubahan
                 </a>
             </div>

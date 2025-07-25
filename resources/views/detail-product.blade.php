@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="px-3 lg:px-40 flex flex-1 justify-center py-5">
+    <div class="px-1 lg:px-40 flex flex-1 justify-center py-5">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             @if (session('success'))
                 <div x-data="{ show: true }" x-transition.duration.500ms x-init="setTimeout(() => show = false, 2500)" x-show="show"
@@ -15,7 +15,7 @@
             </div>
 
             <div class="flex flex-wrap">
-                <div class="w-100 m-4 gap-1 overflow-hidden bg-white aspect-[9/10] rounded-xl flex">
+                <div class="w-full md:w-100 m-4 gap-1 overflow-hidden bg-white aspect-[9/10] rounded-xl flex">
                     <div class="w-full bg-center bg-no-repeat aspect-auto bg-cover rounded-none flex-1"
                         style="background-image: url({{ asset($product->img) }});">
                     </div>
@@ -26,7 +26,7 @@
                         {{ $product['name'] }}
                     </h1>
                     <h3
-                        class="text-[#54D12B] min-w-[350px] bg-[#273620] text-3xl font-bold leading-tight tracking-[-0.015em] mx-4 px-6 py-4">
+                        class="text-[#54D12B] md:min-w-[350px] bg-[#273620] text-3xl font-bold leading-tight tracking-[-0.015em] mx-4 px-6 py-4">
                         Rp @convert($product['price'])
                     </h3>
 

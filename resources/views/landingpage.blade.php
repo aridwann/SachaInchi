@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="flex justify-center flex-1 px-3 py-5 lg:px-40">
+    <div class="flex justify-center flex-1 px-1 py-5 lg:px-40">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="@container " id="beranda">
                 <div class="md:p-4">
@@ -7,9 +7,9 @@
                         style="background-image: linear-gradient(to right,
                         rgba(0, 0, 0, 0.7) 30%,rgba(0, 0, 0, 0.1) 100%
                     ), url('/img/sachainchi.jpeg');">
-                        <div class="flex flex-col w-full gap-2 mt-16 ms-5 md:ms-10">
+                        <div class="flex flex-col w-full gap-2 mt-16 ms-2 md:ms-10">
                             <h1
-                                class="text-white lg:text-4xl font-black leading-8 tracking-[-0.033em] text-2xl md:font-black md:leading-tight md:tracking-[-0.033em]">
+                                class="text-white lg:text-4xl font-black leading-8 tracking-[-0.033em] text-xl md:text-2xl md:font-black md:leading-tight md:tracking-[-0.033em]">
                                 Nikmati Kelezatan <br /> Sacha Inchi dari Desa Kami
                             </h1>
                             <h2
@@ -19,7 +19,7 @@
                             </h2>
                         </div>
                         <button
-                            class="flex mt-4 ms-5 md:ms-10 mb-16 md:mb-0 min-w-[50px] max-w-[120px] md:max-w-[150px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-2 md:h-10 md:px-4 bg-[#54D12B] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em] md:text-base md:font-bold md:leading-normal md:tracking-[0.015em]"
+                            class="flex mt-4 ms-2 md:ms-10 mb-16 md:mb-0 min-w-[50px] max-w-[120px] md:max-w-[150px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-2 md:h-10 md:px-4 bg-[#54D12B] text-[#172112] text-sm font-bold leading-normal tracking-[0.015em] md:text-base md:font-bold md:leading-normal md:tracking-[0.015em]"
                             onclick="location.href = '/products'">
                             <span class="truncate">Lihat Produk</span>
                         </button>
