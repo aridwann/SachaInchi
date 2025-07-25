@@ -19,8 +19,8 @@
                         <div id="preview"
                             class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32 relative"
                             style="
-                      background-image: url('{{ asset($user->avatar ?? 'img/default-avatar.png') }}' );
-                    ">
+                            background-image: url('{{ asset($user->avatar ?? 'img/default-avatar.png') }}' );
+                            ">
                             <div class="w-full items-end px-4 py-3">
                                 <label
                                     class="absolute bottom-0 right-0 flex justify-center items-center rounded-full w-10 h-10 bg-[#172112] border-[#54D12B] cursor-pointer hover:scale-95 border-2"
@@ -33,11 +33,11 @@
                                 </label>
                                 <input class="hidden" aria-describedby="user_avatar_help" id="user_avatar"
                                     type="file" accept="image/jpg, image/png, image/jpeg" name="avatar" />
-                                @error('avatar')
-                                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                                @enderror
                             </div>
                         </div>
+                        @error('avatar')
+                            <p class="text-red-500 text-xs -mt-2">{{ $message }}</p>
+                        @enderror
                         <div class="flex flex-col items-center justify-center">
                             <p class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] text-center">
                                 {!! $user->name .
